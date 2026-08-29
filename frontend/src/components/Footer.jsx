@@ -2,12 +2,20 @@ import { Link } from "react-router-dom";
 import { Linkedin, Mail, MapPin } from "lucide-react";
 import { useLang } from "../context/LangContext";
 import { LINKS } from "../data/content";
+import { NewsletterForm } from "./NewsletterForm";
 
 export function Footer() {
   const { t } = useLang();
   return (
     <footer className="border-t border-linew/70 mt-24" data-testid="site-footer">
       <div className="mx-auto max-w-6xl px-5 sm:px-8 py-16">
+        <div className="mb-14 rounded-3xl border border-linew bg-cardw p-8 sm:p-10 flex flex-col lg:flex-row lg:items-center gap-6" data-testid="footer-newsletter">
+          <div className="flex-1">
+            <p className="font-serif text-2xl sm:text-3xl font-medium tracking-tight text-ink">{t.newsletter.title}</p>
+            <p className="mt-2 text-sm text-mutedw max-w-md">{t.newsletter.sub}</p>
+          </div>
+          <NewsletterForm />
+        </div>
         <div className="grid md:grid-cols-3 gap-12">
           <div>
             <p className="font-serif text-3xl sm:text-4xl font-medium tracking-tight text-ink leading-tight">

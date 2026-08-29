@@ -36,9 +36,22 @@ Create a sophisticated personal professional website for Josué Boutros using jo
 - Backend: /api/health 200; POST /api/contact stores + returns doc; invalid payload 422
 - Frontend: home hero/manifesto/insights render; search filters (diabetes → 3); article page loads; ES toggle translates all UI; contact form submits with Spanish success toast; dark mode works; all 8 routes 200
 
+## Implemented (2026-08-29, round 2)
+- Essay audio: "Listen to this essay" button on every article page — OpenAI TTS (tts-1-hd, voice "onyx") via Emergent universal key; text chunked ≤4000 chars, audio cached as mp3 in /app/backend/audio_cache, served via GET /api/tts/{key}.mp3; custom mini-player with play/pause + progress. Works EN + ES (ES has slight English accent — OpenAI voice limitation)
+- Newsletter: global footer subscribe form (EN/ES) → POST /api/newsletter stores in `newsletter_subscribers` (idempotent) + sends branded welcome email via Emergent managed Resend
+- Contact notifications: every inquiry triggers a branded HTML notification email to the site owner (all fields escaped, guardrail-gated)
+- BLOCKER: hello@josueboutros.md is undeliverable (domain josueboutros.md has no DNS/MX) — email provider blocks it. Notification pipeline is built and verified working with real sends; needs one real inbox address (change OWNER_EMAIL in backend/.env) to go live
+- Real photography: his existing site has zero photos of him (verified in source; josueboutros.com doesn't resolve). Stock placeholders remain; swap on user upload
+
+## Verified (round 2)
+- POST /api/newsletter: stores, dedupes (already:true), welcome email sent (202 from proxy)
+- POST /api/contact: stores + notification path runs (email blocked only by undeliverable recipient)
+- POST /api/tts: generated 65KB mp3, GET serves audio/mpeg 200; UI test: full essay audio generated (~30s) and played in custom player
+- UI: newsletter subscribe through footer shows success toast
+
 ## Backlog
-- P1: Real email delivery for inquiries (Resend), inbox/admin view for stored inquiries
-- P1: Replace stock portrait imagery with real photography of Dr. Boutros
-- P2: RSS feed + sitemap.xml for the archive; per-language URLs (/es/...)
-- P2: Newsletter signup for new essays
-- P2: Reading progress bar + audio versions (OpenAI TTS) for articles
+- P0: Real owner inbox for inquiry notifications (one env var once provided)
+- P1: Real photos of Dr. Boutros (awaiting user upload), swap into Hero/About/Clinical
+- P1: Admin inbox view for stored inquiries + subscriber list
+- P2: RSS feed + sitemap.xml; per-language URLs; essay auto-email to subscribers on publish
+- P2: Native-Spanish voice via ElevenLabs for ES essay audio

@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { dict } from "../data/content";
+import { extras } from "../data/extras";
 
 const LangContext = createContext(null);
 
@@ -17,7 +18,7 @@ export function LangProvider({ children }) {
     document.documentElement.classList.toggle("dark", dark);
   }, [dark]);
 
-  const t = dict[lang];
+  const t = { ...dict[lang], ...extras[lang] };
   return (
     <LangContext.Provider value={{ lang, setLang, t, dark, setDark }}>
       {children}

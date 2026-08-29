@@ -4,6 +4,7 @@ import { toast } from "sonner";
 import { useLang } from "../context/LangContext";
 import { articles } from "../data/articles";
 import { formatDate } from "../components/ArticleCard";
+import { ListenButton } from "../components/ListenButton";
 import { Reveal } from "../components/Reveal";
 import { useSEO } from "../hooks/useSEO";
 
@@ -68,6 +69,10 @@ export default function ArticlePage() {
               <p className="text-sm font-semibold text-ink">Josué Boutros, MD</p>
               <p className="text-xs text-subtlew">{t.hero.badge}</p>
             </div>
+            <ListenButton
+              text={`${article.title[lang]}. ${article.dek[lang]} ${paras.join(" ")}`}
+              lang={lang}
+            />
             <button
               data-testid="article-share-button"
               onClick={copyLink}
