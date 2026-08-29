@@ -4,8 +4,7 @@ import Link from "next/link";
 import { motion, useScroll, useSpring, useTransform } from "motion/react";
 import { useRef, useState } from "react";
 import { localeHref, type Locale } from "@/lib/i18n";
-import { person, residency } from "@/content/profile";
-import { t } from "@/content/dictionary";
+import { residency } from "@/content/profile";
 
 const copy = {
   en: {
@@ -78,7 +77,7 @@ const copy = {
   },
 } as const;
 
-type Copy = (typeof copy)["en"];
+type Copy = (typeof copy)[keyof typeof copy];
 
 const clinical = [
   ["01", "Chronic Disease", "Diabetes, hypertension, and the long work of making a plan sustainable."],
