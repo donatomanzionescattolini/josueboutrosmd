@@ -14,49 +14,49 @@
 :root {
   color-scheme: light;
 
-  --paper: #fcfbf9;
+  --paper: #FBFAF6;
   --surface: #ffffff;
-  --surface-2: #f4f1ea;
-  --ink: #111827;
-  --ink-soft: #334155;
-  --muted: #64748b;
-  --border: #e2e8f0;
-  --border-strong: #cbd5e1;
+  --surface-2: #F2EFE6;
+  --ink: #0E241D;
+  --ink-soft: #1B4034;
+  --muted: #9C6A4E;
+  --border: rgba(27, 64, 52, 0.16);
+  --border-strong: rgba(27, 64, 52, 0.32);
 
-  --accent: #1e3a8a;
-  --accent-hover: #172554;
-  --accent-contrast: #ffffff;
-  --accent-soft: #eff6ff;
-  --accent-ink: #1e3a8a;
+  --accent: #D98A1F;
+  --accent-hover: #c27a19;
+  --accent-contrast: #0E241D;
+  --accent-soft: rgba(217, 138, 31, 0.15);
+  --accent-ink: #b36712;
 
-  --clay: #b45309;
-  --clay-soft: #fef3c7;
+  --clay: #9C6A4E;
+  --clay-soft: rgba(156, 106, 78, 0.15);
 
-  --shadow-color: 220 20% 12%;
+  --shadow-color: 160 40% 12%;
 }
 
 .dark {
   color-scheme: dark;
 
-  --paper: #090e17;
-  --surface: #111827;
-  --surface-2: #1e293b;
-  --ink: #f8fafc;
-  --ink-soft: #e2e8f0;
-  --muted: #94a3b8;
-  --border: #1e293b;
-  --border-strong: #334155;
+  --paper: #0a110e;
+  --surface: #121e1a;
+  --surface-2: #1b2d27;
+  --ink: #FBFAF6;
+  --ink-soft: #F2EFE6;
+  --muted: #d59f7d;
+  --border: rgba(251, 250, 246, 0.16);
+  --border-strong: rgba(251, 250, 246, 0.32);
 
-  --accent: #60a5fa;
-  --accent-hover: #93c5fd;
-  --accent-contrast: #0f172a;
-  --accent-soft: #1e3a8a;
-  --accent-ink: #bfdbfe;
+  --accent: #D98A1F;
+  --accent-hover: #e6a245;
+  --accent-contrast: #0E241D;
+  --accent-soft: rgba(217, 138, 31, 0.2);
+  --accent-ink: #f2c78a;
 
-  --clay: #fbbf24;
-  --clay-soft: #78350f;
+  --clay: #d59f7d;
+  --clay-soft: rgba(213, 159, 125, 0.2);
 
-  --shadow-color: 220 40% 3%;
+  --shadow-color: 160 50% 3%;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -81,7 +81,8 @@
   --color-clay-soft: var(--clay-soft);
 
   --font-display: var(--font-fraunces), ui-serif, Georgia, "Times New Roman", serif;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-sans: var(--font-ibm-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-ibm-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   --radius-card: 1rem;
   --radius-pill: 999px;
@@ -224,7 +225,7 @@
 
   /* Small caps label used above every section heading. */
   .eyebrow {
-    font-family: var(--font-sans);
+    font-family: var(--font-mono);
     font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 0.16em;
