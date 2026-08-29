@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Fraunces, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { dictionary, t } from "@/content/dictionary";
 import {
@@ -21,10 +21,18 @@ const display = Fraunces({
   variable: "--font-fraunces",
 });
 
-const sans = Inter({
+const sans = IBM_Plex_Sans({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-ibm-sans",
+});
+
+const mono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
+  variable: "--font-ibm-mono",
 });
 
 export function generateStaticParams() {
@@ -114,7 +122,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={localeTags[locale]}
-      className={`${display.variable} ${sans.variable}`}
+      className={`${display.variable} ${sans.variable} ${mono.variable}`}
       suppressHydrationWarning
     >
       <head>
