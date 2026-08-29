@@ -1,4 +1,5 @@
-import type { CSSProperties, Metadata } from "react";
+import type { CSSProperties } from "react";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/page-header";
 import { isLocale, type Locale } from "@/lib/i18n";
@@ -178,7 +179,7 @@ export async function generateMetadata({
     title: locale === "en" ? "Style Preview" : "Vista Previa de Estilos",
     description: t(copy.lede, locale),
     alternates: { canonical: `/${locale}/preview` },
-    robots: { index: false, follow: false },
+    robots: { index: false, follow: true },
   };
 }
 
@@ -233,10 +234,17 @@ export default async function PreviewPage({
                 <p className="mt-3 text-sm leading-relaxed" style={{ color: "var(--preview-muted)" }}>
                   {t(variant.subtitle, locale)}
                 </p>
-                <ul className="mt-6 space-y-3 border-t pt-5" style={{ borderColor: "var(--preview-line)" }}>
-                  {variant.highlights.map((highlight, i) => (
-                    <li key={i} className="text-sm leading-relaxed" style={{ color: "var(--preview-muted)" }}>
-                      • {t(highlight, locale)}
+                <ul
+                  className="mt-6 list-disc space-y-3 border-t pl-5 pt-5"
+                  style={{ borderColor: "var(--preview-line)" }}
+                >
+                  {variant.highlights.map((highlight) => (
+                    <li
+                      key={highlight.en}
+                      className="text-sm leading-relaxed"
+                      style={{ color: "var(--preview-muted)" }}
+                    >
+                      {t(highlight, locale)}
                     </li>
                   ))}
                 </ul>
