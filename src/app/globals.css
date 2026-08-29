@@ -6,57 +6,57 @@
 /* ═══════════════════════════════════════════════════════════════════════════
    PALETTE
 
-   A warm, paper-like light theme and a deep pine dark theme. The accent is a
-   pine teal — clinical without the cold corporate blue — warmed by a clay
+   An elegant navy and warm ivory light theme, and a deep oxford dark theme. The accent is a
+   distinguished navy — conveying erudition and brilliance — warmed by a gold/bronze
    secondary. Every foreground/background pairing below clears WCAG AA.
    ═══════════════════════════════════════════════════════════════════════════ */
 
 :root {
   color-scheme: light;
 
-  --paper: #faf7f2;
+  --paper: #fcfbf9;
   --surface: #ffffff;
-  --surface-2: #f3eee6;
-  --ink: #14201d;
-  --ink-soft: #2c3a36;
-  --muted: #5c6a66;
-  --border: #e4dcd0;
-  --border-strong: #d2c7b7;
+  --surface-2: #f4f1ea;
+  --ink: #111827;
+  --ink-soft: #334155;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
 
-  --accent: #0f5f55;
-  --accent-hover: #0b4b43;
+  --accent: #1e3a8a;
+  --accent-hover: #172554;
   --accent-contrast: #ffffff;
-  --accent-soft: #e3efec;
-  --accent-ink: #0a413a;
+  --accent-soft: #eff6ff;
+  --accent-ink: #1e3a8a;
 
-  --clay: #a85a34;
-  --clay-soft: #f6e9e1;
+  --clay: #b45309;
+  --clay-soft: #fef3c7;
 
-  --shadow-color: 158 25% 12%;
+  --shadow-color: 220 20% 12%;
 }
 
 .dark {
   color-scheme: dark;
 
-  --paper: #0b1211;
-  --surface: #121b19;
-  --surface-2: #182321;
-  --ink: #eceae4;
-  --ink-soft: #d3d6d1;
-  --muted: #9aa8a3;
-  --border: #24312e;
-  --border-strong: #35443f;
+  --paper: #090e17;
+  --surface: #111827;
+  --surface-2: #1e293b;
+  --ink: #f8fafc;
+  --ink-soft: #e2e8f0;
+  --muted: #94a3b8;
+  --border: #1e293b;
+  --border-strong: #334155;
 
-  --accent: #5fc9b4;
-  --accent-hover: #7ad6c3;
-  --accent-contrast: #08201c;
-  --accent-soft: #122a26;
-  --accent-ink: #9fe0d1;
+  --accent: #60a5fa;
+  --accent-hover: #93c5fd;
+  --accent-contrast: #0f172a;
+  --accent-soft: #1e3a8a;
+  --accent-ink: #bfdbfe;
 
-  --clay: #e4956a;
-  --clay-soft: #1c2422;
+  --clay: #fbbf24;
+  --clay-soft: #78350f;
 
-  --shadow-color: 160 40% 3%;
+  --shadow-color: 220 40% 3%;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
