@@ -1,0 +1,207 @@
+{
+  "project_name": "Dr. Josué Boutros, MD - Personal Authority & Medical Editorial Platform",
+  "archetype": "ARCHETYPE 1: ORGANIC & EARTHY / PREMIUM MEDICAL EDITORIAL",
+  "art_direction": "Premium Medical Editorial meets Warm Human Design. A fusion of Swiss structural clarity, high-end editorial typography (New York Times / Atlantic medical essay feel), and warm Cuban-Miami humanism. Deep clinical credibility balanced with approachable empathy.",
+  "theme_strategy": {
+    "default_mode": "light",
+    "support_toggle": true,
+    "light_palette": {
+      "bg_primary": "#FAF7F2",
+      "bg_surface": "#FFFFFF",
+      "bg_card": "#F4EFE6",
+      "bg_muted": "#ECE5D8",
+      "text_main": "#1C1917",
+      "text_muted": "#57534E",
+      "text_subtle": "#78716C",
+      "border_light": "#E7DFD3",
+      "accent_terracotta": "#9F4A32",
+      "accent_sage": "#3E5C4A",
+      "accent_gold": "#B8860B"
+    },
+    "dark_palette": {
+      "bg_primary": "#12100E",
+      "bg_surface": "#1C1917",
+      "bg_card": "#262320",
+      "bg_muted": "#322E2A",
+      "text_main": "#F5F2EB",
+      "text_muted": "#A8A29E",
+      "text_subtle": "#78716C",
+      "border_light": "#3C3732",
+      "accent_terracotta": "#D96B4F",
+      "accent_sage": "#658B72",
+      "accent_gold": "#D4AF37"
+    }
+  },
+  "typography": {
+    "heading_font": "Newsreader, Cormorant Garamond, or Playfair Display, serif",
+    "body_font": "Manrope, Outfit, or Work Sans, sans-serif",
+    "mono_font": "JetBrains Mono or IBM Plex Mono, monospace",
+    "font_google_import": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
+    "scales": {
+      "hero_title": "text-4xl sm:text-5xl lg:text-6xl font-serif tracking-tight leading-[1.08]",
+      "h1_title": "text-3xl sm:text-4xl lg:text-5xl font-serif tracking-tight leading-tight",
+      "h2_section": "text-2xl sm:text-3xl lg:text-4xl font-serif tracking-tight leading-snug",
+      "h3_card": "text-xl sm:text-2xl font-serif font-medium leading-snug",
+      "body_lg": "text-lg sm:text-xl font-sans leading-relaxed text-stone-700 dark:text-stone-300",
+      "body_base": "text-base font-sans leading-relaxed text-stone-600 dark:text-stone-400",
+      "caption": "text-xs sm:text-sm font-mono uppercase tracking-[0.2em] text-stone-500"
+    }
+  },
+  "key_features_and_pages": [
+    {
+      "name": "Kinetic Editorial Hero",
+      "description": "Masked line-by-line reveal on load, subtle parallax scrolling, live location/status badge (Palmetto General Hospital, Hialeah FL), quick credential pill, and prominent bilingual manifesto tagline 'Continuity. Language. Trust.'"
+    },
+    {
+      "name": "Numbered Manifesto Chapters",
+      "description": "Interactive, expandable editorial manifesto outlining Dr. Boutros' core medical philosophy: Chapter I: Continuity as Diagnosis, Chapter II: The Language Line, Chapter III: Trust Across Generations."
+    },
+    {
+      "name": "Slow Editorial Marquee",
+      "description": "Gentle, elegant drifting ribbon showcasing clinical pillars: Bilingual Family Medicine • Camagüey to Miami • Preventive Care Barriers • Resident Physician & Chief Resident • Evidence-Based Advocacy."
+    },
+    {
+      "name": "Searchable Insights & Articles Archive",
+      "description": "Filterable archive by topic (Cardiovascular, Nutrition & Culture, Acute vs Emergency, Health Equity) and language tag (EN/ES), with instant full-text search, reading time indicators, and dedicated Article Detail Modal/Page reader view with key takeaways, citations, and export/share capabilities."
+    },
+    {
+      "name": "About / Journey Timeline",
+      "description": "Rich biography covering medical education at Universidad de Ciencias Médicas de Camagüey, Cuba, transition to US Residency at Palmetto General Hospital in Hialeah FL, Chief Resident leadership, and clinical focus on South Florida immigrant families."
+    },
+    {
+      "name": "Clinical Work Showcase",
+      "description": "4 Interactive Pillars: 01. Chronic Disease Management (Diabetes & Hypertension), 02. Preventive Care & Screening, 03. Language Concordance & Access, 04. Whole-Person & Household Medicine."
+    },
+    {
+      "name": "Research & Publications Archive",
+      "description": "Evidence repository detailing ongoing research papers: Language Concordance & Diagnostic Accuracy, Continuity of Care in Immigrant Families, and Preventive Care Barriers in South Florida with abstract views and PDF download actions."
+    },
+    {
+      "name": "Media & Appearances",
+      "description": "Keynote lectures, podcast appearances, community health workshops, and press features in English and Spanish."
+    },
+    {
+      "name": "Bilingual EN/ES Content Switcher",
+      "description": "Global state toggle converting all interface text, article summaries, credentials, and contact form options seamlessly between English and Spanish."
+    },
+    {
+      "name": "Contact & Consultation Pathways",
+      "description": "Structured inquiry form with dynamic category routing (Patient Care Info, Academic/Speaking Invitation, Media Inquiry, Professional Collaboration) with custom confirmation and Sonner toast notifications."
+    }
+  ],
+  "image_urls": {
+    "physician_hero": "https://images.unsplash.com/photo-1612531386530-97286d97c2d2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHw0fHxoaXNwYW5pYyUyMGRvY3RvciUyMHBvcnRyYWl0JTIwaG9zcGl0YWwlMjBwaHlzaWNpYW58ZW58MHx8fHwxNzg3OTg0MDU5fDA&ixlib=rb-4.1.0&q=85",
+    "physician_about": "https://images.unsplash.com/photo-1612531385446-f7e6d131e1d0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHwzfHxoaXNwYW5pYyUyMGRvY3RvciUyMHBvcnRyYWl0JTIwaG9zcGl0YWwlMjBwaHlzaWNpYW58ZW58MHx8fHwxNzg3OTg0MDU5fDA&ixlib=rb-4.1.0&q=85",
+    "clinical_consultation_1": "https://images.unsplash.com/photo-1758691462413-b07dee2933fe?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwyfHxkb2N0b3IlMjBjb25zdWx0YXRpb24lMjBwYXRpZW50JTIwbGlzdGVuaW5nJTIwc3RldGhvc2NvcGV8ZW58MHx8fHwxNzg3OTg0MDY3fDA&ixlib=rb-4.1.0&q=85",
+    "clinical_consultation_2": "https://images.unsplash.com/photo-1631558556874-1d127211f574?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwxfHxkb2N0b3IlMjBjb25zdWx0YXRpb24lMjBwYXRpZW50JTIwbGlzdGVuaW5nJTIwc3RldGhvc2NvcGV8ZW58MHx8fHwxNzg3OTg0MDY3fDA&ixlib=rb-4.1.0&q=85",
+    "research_stethoscope": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwxfHx2aW50YWdlJTIwbWVkaWNhbCUyMG5vdGVib29rJTIwc3RldGhvc2NvcGUlMjByZXNlYXJjaCUyMGZvdW50YWluJTIwcGVufGVufDB8fHxibGFja1_hbmRfd2hpdGV8MTc4Nzk4NDA2N3ww&ixlib=rb-4.1.0&q=85",
+    "journal_notes": "https://images.unsplash.com/photo-1575939067172-e7680914fb4a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHw0fHx2aW50YWdlJTIwbWVkaWNhbCUyMG5vdGVib29rJTIwc3RldGhvc2NvcGUlMjByZXNlYXJjaCUyMGZvdW50YWluJTIwcGVufGVufDB8fHxibGFja1_hbmRfd2hpdGV8MTc4Nzk4NDA2N3ww&ixlib=rb-4.1.0&q=85"
+  },
+  "content_data": {
+    "bio_en": "I am a family physician and researcher in training, serving one of the most vibrant Spanish-speaking communities in Hialeah and Greater Miami, Florida. Born and trained in Camagüey, Cuba, I arrived in the United States driven by an unwavering commitment to clinical excellence, patient advocacy, and human connection.",
+    "bio_es": "Soy médico de familia e investigador en formación, al servicio de una de las comunidades hispanohablantes más vibrantes en Hialeah y el gran Miami, Florida. Graduado en Camagüey, Cuba, llegué a los Estados Unidos impulsado por un compromiso inquebrantable con la excelencia clínica y el cuidado humano.",
+    "tagline_en": "Continuity. Language. Trust.",
+    "tagline_es": "Continuidad. Idioma. Confianza.",
+    "hero_headline_en": "A physician trained to treat the household, not just the chart.",
+    "hero_headline_es": "Un médico capacitado para tratar el hogar, no solo el historial.",
+    "articles": [
+      {
+        "id": "bp-numbers-meaning",
+        "title_en": "What Your Blood Pressure Numbers Actually Mean",
+        "title_es": "Lo que realmente significan los números de su presión arterial",
+        "category": "Cardiovascular Health",
+        "category_es": "Salud Cardiovascular",
+        "date": "July 2026",
+        "readTime": "6 min read",
+        "summary_en": "The two numbers explained in plain English and Spanish, why diastolic pressure matters, and why a single elevated reading is not an immediate chronic diagnosis.",
+        "summary_es": "Los dos números explicados sencillamente, por qué importa la presión diastólica y por qué una sola lectura alta no es un diagnóstico definitivo.",
+        "content_en": "When a blood pressure cuff inflates against your arm, it measures two distinct forces. The top number (systolic) represents the surge of pressure as your heart contracts. The bottom number (diastolic) reflects the residual tension in your vascular walls as your heart rests between beats. In my practice at Palmetto General, many patients arrive anxious over a single isolated 140/90 reading. Blood pressure is a dynamic wave influenced by sleep, pain, caffeine, and white-coat stress. Continuity of measurement over weeks tells the true clinical story."
+      },
+      {
+        "id": "diabetes-cultural-food",
+        "title_en": "Diabetes and the Food You Already Eat",
+        "title_es": "La diabetes y los alimentos que su familia ya consume",
+        "category": "Nutrition & Culture",
+        "category_es": "Nutrición y Cultura",
+        "date": "June 2026",
+        "readTime": "8 min read",
+        "summary_en": "Managing blood glucose without abandoning Cuban, Hispanic, and Caribbean heritage cooking. Practical glycemic adjustments for rice, beans, and plantains.",
+        "summary_es": "Cómo controlar la glucosa en sangre sin abandonar la cocina tradicional hispana y caribeña. Ajustes glucémicos prácticos para arroz, frijoles y plátanos.",
+        "content_en": "Traditional dietary advice often instructs Hispanic patients to eliminate rice, black beans, and root vegetables entirely. This approach fails because it ignores cultural identity and household reality. Instead of banning heritage staples, we practice glycemic pairing: balancing white rice with fiber-dense black beans, olive oil, and proteins to flatten postprandial glucose spikes. Food is comfort, culture, and medicine."
+      },
+      {
+        "id": "er-vs-clinic-guide",
+        "title_en": "When to Go to the ER, and When to Wait for Clinic",
+        "title_es": "Cuándo ir a Urgencias y cuándo esperar a la consulta médica",
+        "category": "Acute Care Navigation",
+        "category_es": "Guía de Atención Médica",
+        "date": "May 2026",
+        "readTime": "5 min read",
+        "summary_en": "A clear triage guide for patients: red-flag symptoms that demand emergency evaluation versus urgent conditions best managed in primary care.",
+        "summary_es": "Una guía clara de triaje: síntomas de alarma que requieren urgencias frente a dolencias que se tratan mejor en atención primaria.",
+        "content_en": "Emergency departments excel at life-saving interventions for acute myocardial infarction, stroke, or severe trauma. However, for chronic disease flare-ups or uncomplicated infections, primary care provides superior continuity without the financial strain of an ER visit. Learn the critical signals like chest pain with radiation vs benign musculoskeletal discomfort."
+      }
+    ],
+    "research_projects": [
+      {
+        "title_en": "Language Concordance & Diagnostic Accuracy in Primary Care",
+        "title_es": "Concordancia Lingüística y Precisión Diagnóstica en Atención Primaria",
+        "status": "Peer Review",
+        "description_en": "Investigating how direct physician-patient Spanish communication reduces diagnostic errors and improves treatment adherence compared to medical interpretation.",
+        "description_es": "Investigación sobre cómo la comunicación directa en español reduce errores diagnósticos y mejora el apego al tratamiento."
+      },
+      {
+        "title_en": "Continuity of Care in Immigrant Families Across South Florida",
+        "title_es": "Continuidad Asistencial en Familias Inmigrantes del Sur de la Florida",
+        "status": "Ongoing Cohort",
+        "description_en": "Longitudinal evaluation of how establishing a primary care home mitigates ER overutilization in recently arrived immigrant households.",
+        "description_es": "Evaluación longitudinal sobre cómo un médico de cabecera reduce el uso excesivo de urgencias en hogares inmigrantes."
+      },
+      {
+        "title_en": "Barriers to Preventive Cancer Screenings in Hialeah",
+        "title_es": "Barreras en Detección Precoz del Cáncer en Hialeah",
+        "status": "Published Monograph",
+        "description_en": "Socioeconomic and linguistic barriers to colorectal and mammography screening completion in predominantly Spanish-speaking zip codes.",
+        "description_es": "Análisis de barreras socioeconómicas y lingüísticas en la realización de mamografías y colonoscopias."
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Install and verify smooth scrolling with Lenis and animation support via framer-motion.",
+    "Ensure total dark/light theme switching with smooth background and text transition.",
+    "Implement language toggle state (EN/ES) that transforms all sections without page reloads.",
+    "Hero section MUST have a masked line-by-line reveal, signature badge, and subtle mouse parallax.",
+    "Manifesto MUST include 3 numbered interactive chapters with deep clinical rationale.",
+    "Archive MUST allow live text search, category tag filter, language badge filter, and trigger a clean long-form Article Reader Modal.",
+    "Contact form MUST support inquiry routing (Patient, Speaking, Media, Professional) and fire Sonner toasts on submit.",
+    "Include data-testid attributes on ALL interactive elements as listed in the test_ids section."
+  ],
+  "test_ids": {
+    "nav_logo": "nav-logo-link",
+    "nav_about": "nav-about-link",
+    "nav_clinical": "nav-clinical-link",
+    "nav_insights": "nav-insights-link",
+    "nav_research": "nav-research-link",
+    "nav_media": "nav-media-link",
+    "nav_contact": "nav-contact-button",
+    "language_toggle": "language-switcher-toggle",
+    "theme_toggle": "theme-mode-toggle",
+    "hero_headline": "hero-headline-text",
+    "hero_cta_explore": "hero-cta-explore-button",
+    "hero_cta_contact": "hero-cta-contact-button",
+    "manifesto_chapter_1": "manifesto-chapter-1-button",
+    "manifesto_chapter_2": "manifesto-chapter-2-button",
+    "manifesto_chapter_3": "manifesto-chapter-3-button",
+    "insights_search_input": "insights-search-input",
+    "insights_category_filter": "insights-category-filter",
+    "article_card_prefix": "article-card-",
+    "article_modal": "article-reader-modal",
+    "article_modal_close": "article-reader-close-button",
+    "contact_form": "contact-inquiry-form",
+    "contact_name_input": "contact-name-input",
+    "contact_email_input": "contact-email-input",
+    "contact_type_select": "contact-type-select",
+    "contact_message_input": "contact-message-input",
+    "contact_submit_button": "contact-submit-button"
+  }
+}
