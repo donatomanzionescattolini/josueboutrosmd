@@ -7,8 +7,11 @@ import type { Locale, Localized } from "./profile";
 export const dictionary = {
   nav: {
     home: { en: "Home", es: "Inicio" },
-    about: { en: "About", es: "Perfil" },
-    practice: { en: "Clinical Focus", es: "Enfoque Clínico" },
+    about: { en: "About", es: "Sobre mí" },
+    clinical: { en: "Clinical", es: "Clínica" },
+    insights: { en: "Insights", es: "Ideas" },
+    research: { en: "Research", es: "Investigación" },
+    media: { en: "Media", es: "Medios" },
     cv: { en: "CV", es: "Currículum" },
     contact: { en: "Contact", es: "Contacto" },
     menu: { en: "Menu", es: "Menú" },
@@ -29,6 +32,28 @@ export const dictionary = {
 
   home: {
     eyebrow: { en: "Family Medicine", es: "Medicina Familiar" },
+    kicker: { en: "Family Medicine — Hialeah, Florida", es: "Medicina Familiar — Hialeah, Florida" },
+    heroBadge: { en: "Chief Resident · Palmetto General Hospital", es: "Jefe de Residentes · Palmetto General Hospital" },
+    heroLine1: { en: "A physician trained", es: "Un médico capacitado" },
+    heroLine2: { en: "to treat the household,", es: "para tratar el hogar," },
+    heroLine3: { en: "not just the chart.", es: "no solo el historial." },
+    heroSub: {
+      en: "Family physician and researcher in training, serving one of the most Spanish-speaking communities in the United States. Continuity. Language. Trust. These are not extras — they are the point.",
+      es: "Médico de familia e investigador en formación, al servicio de una de las comunidades hispanohablantes más grandes de Estados Unidos. Continuidad. Idioma. Confianza. No son extras — son el punto.",
+    },
+    heroCtaPrimary: { en: "Read the Insights", es: "Leer las Ideas" },
+    heroCtaSecondary: { en: "Get in touch", es: "Escríbeme" },
+    heroTagline: { en: "Continuity. Language. Trust.", es: "Continuidad. Idioma. Confianza." },
+    heroScroll: { en: "Scroll", es: "Desplázate" },
+    marqueeItems: [
+      { en: "Bilingual Family Medicine", es: "Medicina Familiar Bilingüe" },
+      { en: "Camagüey to Miami", es: "De Camagüey a Miami" },
+      { en: "Continuity of Care", es: "Continuidad Asistencial" },
+      { en: "Language Concordance Research", es: "Investigación en Concordancia Lingüística" },
+      { en: "Chief Resident, Palmetto General", es: "Jefe de Residentes, Palmetto General" },
+      { en: "Preventive Care for Real Households", es: "Prevención para Hogares Reales" },
+      { en: "English · Español", es: "English · Español" },
+    ] satisfies Localized[],
     aboutHeading: { en: "About", es: "Perfil" },
     aboutLede: {
       en: "A physician trained to treat the household, not just the chart.",
@@ -50,6 +75,94 @@ export const dictionary = {
       en: "For colleagues, programs, and collaborators.",
       es: "Para colegas, programas y colaboradores.",
     },
+    insightsEyebrow: { en: "The Archive", es: "El Archivo" },
+    insightsTitle: { en: "Insights, written to be used.", es: "Ideas escritas para usarse." },
+    insightsSub: {
+      en: "Long-form essays on family medicine, prevention, and the practical physics of staying healthy — in plain English and Spanish.",
+      es: "Ensayos sobre medicina familiar, prevención y la física práctica de mantenerse sano — en inglés y español claros.",
+    },
+    viewAllInsights: { en: "Browse the full archive", es: "Ver el archivo completo" },
+    clinicalEyebrow: { en: "Clinical Work", es: "Trabajo Clínico" },
+    clinicalTitle: { en: "Where the work concentrates.", es: "Dónde se concentra el trabajo." },
+    clinicalLink: { en: "Explore the clinical work", es: "Explorar el trabajo clínico" },
+    statArticles: { en: "Published research articles", es: "Artículos de investigación publicados" },
+    statRole: { en: "Chief Resident, Family Medicine", es: "Jefe de Residentes, Medicina Familiar" },
+    statLanguages: { en: "Languages of care: English & Spanish", es: "Idiomas de atención: inglés y español" },
+    statPgy: { en: "Current postgraduate year", es: "Año actual de posgrado" },
+    ctaTitle: { en: "Patients, podiums, press, and partnerships.", es: "Pacientes, podios, prensa y colaboraciones." },
+    ctaSub: {
+      en: "Whether you are looking for a physician who speaks your language, a speaker for your program, or a collaborator on research that matters — the door is open.",
+      es: "Si busca un médico que hable su idioma, un conferencista para su programa o un colaborador de investigación — la puerta está abierta.",
+    },
+    ctaButton: { en: "Start a conversation", es: "Iniciar una conversación" },
+  },
+
+  manifesto: {
+    eyebrow: { en: "The Manifesto", es: "El Manifiesto" },
+    title: { en: "Three commitments, practiced daily.", es: "Tres compromisos, practicados a diario." },
+    sub: {
+      en: "Family medicine is a long conversation. These are the terms I practice by.",
+      es: "La medicina familiar es una conversación larga. Estos son los términos con los que practico.",
+    },
+    open: { en: "Open", es: "Abrir" },
+    close: { en: "Close", es: "Cerrar" },
+  },
+
+  clinical: {
+    title: { en: "Clinical Work", es: "Trabajo Clínico" },
+    lede: {
+      en: "The practice, in six parts — primary care for real households, where plans must survive contact with work schedules, budgets, and abuela's cooking.",
+      es: "La práctica, en seis partes — atención primaria para hogares reales, donde los planes deben sobrevivir el contacto con horarios de trabajo, presupuestos y la cocina de la abuela.",
+    },
+    noteTitle: { en: "A note for patients", es: "Una nota para pacientes" },
+    note: {
+      en: "This site is educational and does not replace medical advice. For appointments at Palmetto General Hospital's family medicine clinic, or for questions about becoming a patient, please use the contact form.",
+      es: "Este sitio es educativo y no reemplaza el consejo médico. Para citas en la clínica de medicina familiar de Palmetto General Hospital, o para preguntas sobre convertirse en paciente, use el formulario de contacto.",
+    },
+  },
+
+  insights: {
+    title: { en: "Insights", es: "Ideas" },
+    lede: {
+      en: "Essays and explainers on family medicine — searchable, citable, and written to be read by patients and colleagues alike.",
+      es: "Ensayos y explicaciones sobre medicina familiar — buscables, citables y escritos para pacientes y colegas por igual.",
+    },
+    searchPlaceholder: { en: "Search the archive — try “blood pressure” or “diabetes”…", es: "Buscar en el archivo — pruebe “presión” o “diabetes”…" },
+    all: { en: "All", es: "Todos" },
+    read: { en: "Read", es: "Leer" },
+    minRead: { en: "min read", es: "min de lectura" },
+    empty: { en: "Nothing matches that search — try another term.", es: "Nada coincide con esa búsqueda — intente otro término." },
+    results: { en: "essays", es: "ensayos" },
+    backToArchive: { en: "Back to the archive", es: "Volver al archivo" },
+    takeaway: { en: "The takeaway", es: "La idea clave" },
+    share: { en: "Copy link", es: "Copiar enlace" },
+    copied: { en: "Link copied to clipboard", es: "Enlace copiado" },
+    related: { en: "Keep reading", es: "Seguir leyendo" },
+    disclaimer: { en: "Educational content — not a substitute for personal medical advice.", es: "Contenido educativo — no sustituye el consejo médico personal." },
+  },
+
+  research: {
+    title: { en: "Research", es: "Investigación" },
+    lede: {
+      en: "Published, peer-reviewed work and presentations at regional and national meetings — all of it beginning at the same place: the exam room in Hialeah.",
+      es: "Trabajo publicado y revisado por pares, y presentaciones en reuniones regionales y nacionales — todo comenzando en el mismo lugar: la consulta en Hialeah.",
+    },
+    statusPeer: { en: "Peer Review", es: "Revisión por Pares" },
+    statusOngoing: { en: "Ongoing Cohort", es: "Cohorte en Curso" },
+    statusPublished: { en: "Published Monograph", es: "Monografía Publicada" },
+    collab: {
+      en: "For research collaboration, data requests, or speaking about this work, use the contact form.",
+      es: "Para colaboración en investigación, solicitudes de datos o charlas sobre este trabajo, use el formulario de contacto.",
+    },
+  },
+
+  media: {
+    title: { en: "Media & Appearances", es: "Medios y Apariciones" },
+    lede: {
+      en: "Teaching, community work, and research presentation — the public side of the practice.",
+      es: "Docencia, trabajo comunitario y presentación de investigación — el lado público de la práctica.",
+    },
+    cta: { en: "Book Josue for a talk, interview, or workshop", es: "Invite a Josué a una charla, entrevista o taller" },
   },
 
   about: {
@@ -63,13 +176,6 @@ export const dictionary = {
     programHeading: { en: "Program", es: "Programa" },
   },
 
-  practice: {
-    title: { en: "Clinical Focus", es: "Enfoque Clínico" },
-    lede: {
-      en: "Full-spectrum family medicine, with particular attention to the conditions that shape health in South Florida.",
-      es: "Medicina familiar de espectro completo, con atención particular a las condiciones que definen la salud en el sur de la Florida.",
-    },
-  },
 
   cv: {
     title: { en: "Curriculum Vitae", es: "Currículum Vitae" },

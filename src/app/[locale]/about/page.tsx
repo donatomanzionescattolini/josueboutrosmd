@@ -3,15 +3,18 @@ import { notFound } from "next/navigation";
 import { dictionary, t } from "@/content/dictionary";
 import {
   bio,
+  credentials,
   education,
   person,
   principles,
   residency,
   shortBio,
+  tagline,
   training,
 } from "@/content/profile";
 import { isLocale, type Locale } from "@/lib/i18n";
 import { currentPgy } from "@/lib/utils";
+import { CheckIcon } from "@/components/icons";
 import { PageHeader } from "@/components/page-header";
 import { Portrait } from "@/components/portrait";
 import { Principles } from "@/components/principles";
@@ -74,7 +77,10 @@ export default async function AboutPage({
               <Reveal>
                 <div className="space-y-6">
                   {bio.map((paragraph, i) => (
-                    <p key={i} className="type-body max-w-2xl">
+                    <p
+                      key={i}
+                      className={i === 0 ? "type-body drop-cap max-w-2xl text-lg sm:text-xl" : "type-body max-w-2xl"}
+                    >
                       {t(paragraph, locale)}
                     </p>
                   ))}
@@ -82,6 +88,14 @@ export default async function AboutPage({
               </Reveal>
 
               <Reveal delay={0.1}>
+                <blockquote className="mt-10 border-l-2 border-clay pl-6">
+                  <p className="font-display text-2xl leading-snug text-ink italic sm:text-3xl">
+                    “{t(tagline, locale)}”
+                  </p>
+                </blockquote>
+              </Reveal>
+
+              <Reveal delay={0.15}>
                 <dl className="mt-14 grid gap-8 border-t border-line pt-10 sm:grid-cols-3">
                   {facts.map((fact) => (
                     <div key={fact.label}>
@@ -107,6 +121,29 @@ export default async function AboutPage({
                   locale={locale}
                 />
               </Reveal>
+
+              {credentials.length > 0 && (
+                <Reveal delay={0.15} y={16}>
+                  <div className="mt-6 rounded-card border border-line bg-surface p-6">
+                    <p className="mb-4 text-[0.625rem] font-medium uppercase tracking-[0.2em] text-muted">
+                      {t(dictionary.cv.credentials, locale)}
+                    </p>
+                    <ul className="space-y-3">
+                      {credentials.map((item) => (
+                        <li key={item.id} className="flex gap-2.5 text-sm text-ink-soft">
+                          <CheckIcon width={14} height={14} className="mt-0.5 shrink-0 text-accent" />
+                          <span>
+                            {t(item.label, locale)}
+                            {item.issuer && (
+                              <span className="text-muted"> — {item.issuer}</span>
+                            )}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </Reveal>
+              )}
             </div>
           </div>
         </div>

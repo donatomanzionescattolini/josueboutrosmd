@@ -7,7 +7,10 @@ import { Monogram } from "./monogram";
 
 const NAV = [
   { key: "about", path: "/about" },
-  { key: "practice", path: "/practice" },
+  { key: "clinical", path: "/clinical" },
+  { key: "insights", path: "/insights" },
+  { key: "research", path: "/research" },
+  { key: "media", path: "/media" },
   { key: "cv", path: "/cv" },
   { key: "contact", path: "/contact" },
 ] as const;

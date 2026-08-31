@@ -11,17 +11,17 @@ export function FocusGrid({
   locale: Locale;
 }) {
   return (
-    <ul className="grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+    <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {items.map((item, i) => (
         <Reveal
           as="li"
           key={item.id}
           delay={(i % 3) * 0.08}
-          className="group relative flex flex-col bg-surface p-8 transition-colors duration-500 hover:bg-surface-2"
+          className="card card-interactive group flex flex-col rounded-card p-8"
         >
           <span
             aria-hidden
-            className="font-display text-sm text-muted transition-colors duration-500 group-hover:text-accent"
+            className="font-display text-xl italic text-clay/80 transition-colors duration-500 group-hover:text-clay"
           >
             {String(i + 1).padStart(2, "0")}
           </span>

@@ -15,22 +15,15 @@ import { ThemeToggle } from "./theme-toggle";
 
 const NAV = [
   { key: "about", path: "/about" },
-  { key: "practice", path: "/practice" },
-  { key: "cv", path: "/cv" },
-  { key: "contact", path: "/contact" },
+  { key: "clinical", path: "/clinical" },
+  { key: "insights", path: "/insights" },
+  { key: "research", path: "/research" },
+  { key: "media", path: "/media" },
 ] as const;
 
 export function SiteHeader({ locale }: { locale: Locale }) {
   const pathname = usePathname() ?? "";
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   // Lock body scroll while the mobile menu is open.
   useEffect(() => {
@@ -48,41 +41,30 @@ export function SiteHeader({ locale }: { locale: Locale }) {
   }, [open]);
 
   return (
-    <header
-      data-print="hide"
-      className={cn(
-        "sticky top-0 z-50 transition-all duration-500",
-        scrolled
-          ? "border-b border-line bg-paper/85 backdrop-blur-xl"
-          : "border-b border-transparent",
-      )}
-    >
-      <div className="container-page">
-        <div className="flex h-18 items-center justify-between gap-4 py-4">
+    <header data-print="hide" className="sticky top-0 z-50">
+      <div className="container-page pt-3 sm:pt-4">
+        <div className="flex h-16 items-center justify-between gap-4 rounded-pill border border-line bg-paper/85 px-4 shadow-soft backdrop-blur-xl sm:px-5">
           <Link
             href={localeHref(locale)}
             onClick={() => setOpen(false)}
-            className="group flex items-center gap-3 text-ink"
+            className="group flex items-center gap-2.5 text-ink"
             aria-label={person.displayName}
           >
             <Monogram
-              size={34}
+              size={30}
               className="text-accent transition-transform duration-500 group-hover:rotate-6"
             />
             <span className="flex flex-col leading-tight">
-              <span className="font-display text-[1.0625rem] tracking-tight">
+              <span className="font-display text-[0.9375rem] tracking-tight">
                 {person.displayName}
               </span>
-              <span className="text-[0.6875rem] uppercase tracking-[0.14em] text-muted">
+              <span className="text-[0.625rem] uppercase tracking-[0.14em] text-muted">
                 {t(person.specialty, locale)}
               </span>
             </span>
           </Link>
 
-          <nav
-            aria-label="Primary"
-            className="hidden items-center gap-8 lg:flex"
-          >
+          <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">
             {NAV.map((item) => {
               const href = localeHref(locale, item.path);
               const active = pathname === href;
@@ -108,6 +90,12 @@ export function SiteHeader({ locale }: { locale: Locale }) {
               label={t(dictionary.actions.toggleLanguage, locale)}
             />
             <ThemeToggle label={t(dictionary.actions.toggleTheme, locale)} />
+            <Link
+              href={localeHref(locale, "/contact")}
+              className="hidden rounded-pill bg-ink px-4 py-2 text-sm font-semibold text-paper transition-colors hover:bg-accent lg:block"
+            >
+              {t(dictionary.nav.contact, locale)}
+            </Link>
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
@@ -138,34 +126,39 @@ export function SiteHeader({ locale }: { locale: Locale }) {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.34, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden border-t border-line bg-paper lg:hidden"
+            className="overflow-hidden lg:hidden"
           >
-            <nav aria-label="Mobile" className="container-page py-6">
-              <ul className="flex flex-col">
-                {NAV.map((item, i) => {
-                  const href = localeHref(locale, item.path);
-                  const active = pathname === href;
-                  return (
-                    <motion.li
-                      key={item.key}
-                      initial={{ opacity: 0, x: -12 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.05 + i * 0.05, duration: 0.35 }}
-                    >
-                      <Link
-                        href={href}
-                        onClick={() => setOpen(false)}
-                        aria-current={active ? "page" : undefined}
-                        className={cn(
-                          "block border-b border-line py-4 font-display text-2xl transition-colors",
-                          active ? "text-accent" : "text-ink",
-                        )}
+            <nav
+              aria-label="Mobile"
+              className="container-page mt-3 rounded-card border border-line bg-paper py-4 shadow-lift"
+            >
+              <ul className="flex flex-col px-2">
+                {[...NAV, { key: "contact", path: "/contact" } as const].map(
+                  (item, i) => {
+                    const href = localeHref(locale, item.path);
+                    const active = pathname === href;
+                    return (
+                      <motion.li
+                        key={item.key}
+                        initial={{ opacity: 0, x: -12 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.05 + i * 0.05, duration: 0.35 }}
                       >
-                        {t(dictionary.nav[item.key], locale)}
-                      </Link>
-                    </motion.li>
-                  );
-                })}
+                        <Link
+                          href={href}
+                          onClick={() => setOpen(false)}
+                          aria-current={active ? "page" : undefined}
+                          className={cn(
+                            "block border-b border-line px-3 py-4 font-display text-xl transition-colors last:border-b-0",
+                            active ? "text-accent" : "text-ink",
+                          )}
+                        >
+                          {t(dictionary.nav[item.key], locale)}
+                        </Link>
+                      </motion.li>
+                    );
+                  },
+                )}
               </ul>
             </nav>
           </motion.div>

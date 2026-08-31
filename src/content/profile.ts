@@ -258,6 +258,159 @@ export const principles: Principle[] = [
 ];
 
 /* ═══════════════════════════════════════════════════════════════════════════
+   THE MANIFESTO — three commitments, read on the home page.
+   Distinct from `principles` below: this is the narrative, chapter-form
+   statement for the homepage; `principles` is the shorter grid used on /about.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+export const manifestoChapters: Principle[] = [
+  {
+    id: "continuity",
+    title: { en: "Continuity as Diagnosis", es: "La Continuidad como Diagnóstico" },
+    body: {
+      en: "A blood pressure reading is a number. Ten readings across a season — taken in the same clinic, by a physician who knows your work schedule, your mother's kitchen, and what changed in March — that is a diagnosis. Continuity is not a scheduling convenience; it is a clinical instrument. Most of what I treat reveals itself over time, and only to someone who was there the whole time.",
+      es: "Una lectura de presión arterial es un número. Diez lecturas a lo largo de una temporada — en la misma clínica, con un médico que conoce su horario de trabajo, la cocina de su madre y lo que cambió en marzo — eso es un diagnóstico. La continuidad no es una comodidad de agenda; es un instrumento clínico. La mayoría de lo que trato se revela con el tiempo, y solo a quien estuvo presente todo el tiempo.",
+    },
+  },
+  {
+    id: "language",
+    title: { en: "The Language Line", es: "La Línea del Idioma" },
+    body: {
+      en: "In Hialeah, the history of the present illness is often told in Spanish — and something is lost every time it passes through a third party. Understanding must come before agreement. I practice on the language line because a patient who can say exactly where it hurts, in the words that carry the meaning, is a patient who gets the right diagnosis the first time.",
+      es: "En Hialeah, la historia de la enfermedad actual se cuenta a menudo en español — y algo se pierde cada vez que pasa por un tercero. La comprensión debe venir antes del acuerdo. Practico en la línea del idioma porque un paciente que puede decir exactamente dónde le duele, con las palabras que cargan el significado, es un paciente que recibe el diagnóstico correcto a la primera.",
+    },
+  },
+  {
+    id: "trust",
+    title: { en: "Trust Across Generations", es: "Confianza entre Generaciones" },
+    body: {
+      en: "The household is the true unit of care: the abuela with hypertension, the father with untreated diabetes, the daughter interpreting at every visit. Trust is built in generations, not appointments. When a family trusts its physician, screening rates rise, ER visits fall, and medicine stops being an emergency service and becomes what it should be — a relationship.",
+      es: "El hogar es la verdadera unidad de atención: la abuela con hipertensión, el padre con diabetes no tratada, la hija que interpreta en cada visita. La confianza se construye en generaciones, no en citas. Cuando una familia confía en su médico, suben los exámenes preventivos, bajan las visitas a urgencias, y la medicina deja de ser un servicio de emergencia para convertirse en lo que debe ser — una relación.",
+    },
+  },
+];
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESEARCH — questions the clinic keeps asking.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+export type ResearchStatus = "peer" | "ongoing" | "published";
+
+export type ResearchProject = {
+  id: string;
+  title: Localized;
+  status: ResearchStatus;
+  body: Localized;
+};
+
+export const researchProjects: ResearchProject[] = [
+  {
+    id: "language-concordance",
+    title: {
+      en: "Language Concordance & Diagnostic Accuracy in Primary Care",
+      es: "Concordancia Lingüística y Precisión Diagnóstica en Atención Primaria",
+    },
+    status: "peer",
+    body: {
+      en: "Investigating how direct physician–patient Spanish communication reduces diagnostic errors and improves treatment adherence compared with interpreted encounters — and what that means for how residency programs should recruit and train.",
+      es: "Investigación sobre cómo la comunicación directa médico–paciente en español reduce errores diagnósticos y mejora el apego al tratamiento en comparación con encuentros interpretados — y lo que esto significa para la formación de residentes.",
+    },
+  },
+  {
+    id: "continuity-immigrant-families",
+    title: {
+      en: "Continuity of Care in Immigrant Families Across South Florida",
+      es: "Continuidad Asistencial en Familias Inmigrantes del Sur de la Florida",
+    },
+    status: "ongoing",
+    body: {
+      en: "A longitudinal evaluation of how establishing a primary care home mitigates emergency department overutilization in recently arrived immigrant households, measured across generations of the same family.",
+      es: "Una evaluación longitudinal de cómo establecer un médico de cabecera reduce el uso excesivo de urgencias en hogares inmigrantes recién llegados, medida a través de generaciones de la misma familia.",
+    },
+  },
+  {
+    id: "preventive-screening-barriers",
+    title: {
+      en: "Barriers to Preventive Cancer Screenings in Hialeah",
+      es: "Barreras en la Detección Precoz del Cáncer en Hialeah",
+    },
+    status: "published",
+    body: {
+      en: "Socioeconomic and linguistic barriers to colorectal and mammography screening completion in predominantly Spanish-speaking zip codes — and the small, cheap interventions that move completion rates.",
+      es: "Barreras socioeconómicas y lingüísticas en la realización de colonoscopias y mamografías en códigos postales predominantemente hispanohablantes — y las intervenciones pequeñas y económicas que mueven las tasas.",
+    },
+  },
+];
+
+/**
+ * Confirmed count of published, peer-reviewed articles — shown as a stat
+ * before individual citations are ready to list in `publications` below.
+ */
+export const researchArticleCount = 4;
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MEDIA & APPEARANCES — the public side of the practice.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+export type MediaAppearance = {
+  id: string;
+  kind: Localized;
+  title: Localized;
+  body: Localized;
+};
+
+export const mediaAppearances: MediaAppearance[] = [
+  {
+    id: "resident-teaching",
+    kind: { en: "Teaching", es: "Docencia" },
+    title: {
+      en: "Resident Teaching Series — Palmetto General Hospital",
+      es: "Serie Docente de Residentes — Palmetto General Hospital",
+    },
+    body: {
+      en: "As Chief Resident, leading noon conferences and bedside teaching on chronic disease management, cross-cultural history-taking, and evidence-based prevention.",
+      es: "Como Jefe de Residentes, dirijo conferencias y enseñanza a pie de cama sobre manejo de enfermedades crónicas, historia clínica intercultural y prevención basada en evidencia.",
+    },
+  },
+  {
+    id: "bilingual-workshops",
+    kind: { en: "Community", es: "Comunidad" },
+    title: {
+      en: "Bilingual Health Workshops — Hialeah",
+      es: "Talleres de Salud Bilingües — Hialeah",
+    },
+    body: {
+      en: "Community workshops on blood pressure, diabetes, and preventive screening, delivered in Spanish and English for the families the research is about.",
+      es: "Talleres comunitarios sobre presión arterial, diabetes y detección preventiva, en español e inglés, para las familias sobre las que trata la investigación.",
+    },
+  },
+  {
+    id: "research-presentations",
+    kind: { en: "Research", es: "Investigación" },
+    title: {
+      en: "Regional & National Research Presentations",
+      es: "Presentaciones Regionales y Nacionales",
+    },
+    body: {
+      en: "Presenting work on language concordance and continuity of care at regional and national family medicine meetings.",
+      es: "Presentando el trabajo sobre concordancia lingüística y continuidad asistencial en reuniones regionales y nacionales de medicina familiar.",
+    },
+  },
+  {
+    id: "media-commentary",
+    kind: { en: "Press", es: "Prensa" },
+    title: {
+      en: "Media Commentary — English & Spanish",
+      es: "Comentario en Medios — Inglés y Español",
+    },
+    body: {
+      en: "Available for print, broadcast, and podcast commentary on bilingual primary care, preventive medicine, and immigrant health in South Florida.",
+      es: "Disponible para prensa, televisión y pódcasts sobre atención primaria bilingüe, medicina preventiva y salud inmigrante en el sur de la Florida.",
+    },
+  },
+];
+
+/* ═══════════════════════════════════════════════════════════════════════════
    CURRICULUM VITAE
    ═══════════════════════════════════════════════════════════════════════════ */
 

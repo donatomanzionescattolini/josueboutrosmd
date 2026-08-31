@@ -312,6 +312,41 @@
   .field[aria-invalid="true"] {
     border-color: var(--clay);
   }
+
+  /* First letter of the opening paragraph on long-form essays. */
+  .drop-cap::first-letter {
+    float: left;
+    font-family: var(--font-display);
+    font-size: 3.4em;
+    line-height: 0.85;
+    font-weight: 500;
+    padding-top: 0.05em;
+    padding-right: 0.12em;
+    color: var(--clay);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MARQUEE — the slow drifting ribbon on the home page.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes marquee-drift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee-drift 46s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════

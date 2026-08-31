@@ -8,7 +8,6 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { ThemeScript } from "@/components/theme-toggle";
 import "../globals.css";
-import "./editorial.css";
 
 const display = Fraunces({ subsets: ["latin"], display: "swap", variable: "--font-fraunces" });
 const sans = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" });

@@ -1,7 +1,18 @@
 import type { MetadataRoute } from "next";
 import { LOCALES, contact } from "@/content/profile";
+import { articles } from "@/content/articles";
 
-const ROUTES = ["", "/about", "/practice", "/cv", "/contact"] as const;
+const ROUTES = [
+  "",
+  "/about",
+  "/clinical",
+  "/insights",
+  "/research",
+  "/media",
+  "/contact",
+  "/cv",
+  ...articles.map((article) => `/insights/${article.slug}`),
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
