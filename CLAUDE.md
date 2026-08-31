@@ -30,11 +30,7 @@ All site content is isolated in two files — **never hard-code content in compo
 
 ### CSS
 
-Tailwind v4 is configured entirely via `@theme inline` blocks inside `src/app/globals.css` — there is no `tailwind.config.*` file. Design tokens (colors, type scale, spacing) live as CSS custom properties in `:root` / `.dark` and are bridged into Tailwind via `@theme inline`, so utility classes like `text-accent`, `bg-paper`, and `border-line` reference the live variables. Shared component classes (`.card`, `.field`, `.eyebrow`, `.link-draw`, `.container-page`) are authored in `@layer components`.
-
-### Navigation
-
-`SiteHeader` is a slim top bar (logo + language/theme toggles + a single menu trigger) paired with a full-height side navigation drawer (`#side-nav`) that slides in from the right at every breakpoint — there is no separate inline desktop nav or dropdown mobile menu; the drawer is the one navigation surface for phones and desktops alike.
+Tailwind v4 is configured entirely via `@theme inline` blocks inside `src/app/globals.css` — there is no `tailwind.config.*` file. Design tokens (colors, type scale, spacing) live as CSS custom properties in `:root` / `.dark` and are bridged into Tailwind via `@theme inline`, so utility classes like `text-accent`, `bg-paper`, and `border-line` reference the live variables. Shared component classes (`.card`, `.field`, `.eyebrow`, `.link-draw`, `.container-page`) are authored in `@layer components`. `src/app/[locale]/editorial.css` is a self-contained stylesheet scoped to `.editorial-home` and should not be imported elsewhere.
 
 ### Theme (dark/light)
 
@@ -42,7 +38,7 @@ Class-driven (`.dark` on `<html>`), not media-query-driven. `ThemeScript` is a r
 
 ### Animations
 
-Motion for React (`motion/react`) is used throughout. The `src/components/reveal.tsx` wrapper handles scroll-triggered fade+lift and respects `useReducedMotion`. `SiteHeader`'s navigation drawer uses `AnimatePresence` with a backdrop fade and staggered link reveal.
+Motion for React (`motion/react`) is used throughout. The `src/components/reveal.tsx` wrapper handles scroll-triggered fade+lift and respects `useReducedMotion`. `EditorialHome` uses `useScroll` + `useSpring` for the vertical progress beam. `SiteHeader`'s mobile menu uses `AnimatePresence` with staggered children.
 
 ### PGY badge
 
