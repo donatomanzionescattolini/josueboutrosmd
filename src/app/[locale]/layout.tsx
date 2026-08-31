@@ -4,8 +4,9 @@ import { notFound } from "next/navigation";
 import { dictionary, t } from "@/content/dictionary";
 import { LOCALES, contact, person, residency, shortBio } from "@/content/profile";
 import { isLocale, localeTags, type Locale } from "@/lib/i18n";
+import { CvRail } from "@/components/cv-rail";
+import { SideNav } from "@/components/side-nav";
 import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
 import { ThemeScript } from "@/components/theme-toggle";
 import "../globals.css";
 
@@ -43,11 +44,12 @@ export default async function LocaleLayout({ children, params }: { children: Rea
       <head><ThemeScript /></head>
       <body>
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-accent focus:px-5 focus:py-2.5 focus:text-sm focus:text-accent-contrast">{t(dictionary.nav.skipToContent, locale)}</a>
-        <div className="relative z-10 flex min-h-dvh flex-col">
-          <SiteHeader locale={locale} />
+        <SideNav locale={locale} />
+        <div className="relative z-10 flex min-h-dvh flex-col lg:pl-64 xl:pr-72">
           <main id="main" className="flex-1">{children}</main>
           <SiteFooter locale={locale} />
         </div>
+        <CvRail locale={locale} />
         <PersonJsonLd locale={locale} />
       </body>
     </html>

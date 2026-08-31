@@ -30,7 +30,11 @@ All site content is isolated in two files — **never hard-code content in compo
 
 ### CSS
 
-Tailwind v4 is configured entirely via `@theme inline` blocks inside `src/app/globals.css` — there is no `tailwind.config.*` file. Design tokens (colors, type scale, spacing) live as CSS custom properties in `:root` / `.dark` and are bridged into Tailwind via `@theme inline`, so utility classes like `text-accent`, `bg-paper`, and `border-line` reference the live variables. Shared component classes (`.card`, `.field`, `.eyebrow`, `.link-draw`, `.container-page`) are authored in `@layer components`. `src/app/[locale]/editorial.css` is a self-contained stylesheet scoped to `.editorial-home` and should not be imported elsewhere.
+Tailwind v4 is configured entirely via `@theme inline` blocks inside `src/app/globals.css` — there is no `tailwind.config.*` file. Design tokens (colors, type scale, spacing) live as CSS custom properties in `:root` / `.dark` and are bridged into Tailwind via `@theme inline`, so utility classes like `text-accent`, `bg-paper`, and `border-line` reference the live variables. Shared component classes (`.card`, `.field`, `.eyebrow`, `.link-draw`, `.container-page`) are authored in `@layer components`.
+
+### Navigation shell
+
+The root layout renders a persistent two-rail app shell: `SideNav` is a fixed left rail (`lg:` and up) with the logo, primary nav links, and language/theme toggles, falling back to a sticky top bar with an `AnimatePresence` dropdown menu below `lg`. `CvRail` is a fixed right rail (`xl:` and up) summarizing role, PGY badge, credentials, and a link to the full `/cv` page, capped with a `BotanicalMark` decorative SVG accent. The main content column is offset with `lg:pl-64 xl:pr-72` so it never sits under the fixed rails.
 
 ### Theme (dark/light)
 
@@ -38,7 +42,7 @@ Class-driven (`.dark` on `<html>`), not media-query-driven. `ThemeScript` is a r
 
 ### Animations
 
-Motion for React (`motion/react`) is used throughout. The `src/components/reveal.tsx` wrapper handles scroll-triggered fade+lift and respects `useReducedMotion`. `EditorialHome` uses `useScroll` + `useSpring` for the vertical progress beam. `SiteHeader`'s mobile menu uses `AnimatePresence` with staggered children.
+Motion for React (`motion/react`) is used throughout. The `src/components/reveal.tsx` wrapper handles scroll-triggered fade+lift and respects `useReducedMotion`. `SideNav`'s mobile menu uses `AnimatePresence` with staggered children.
 
 ### PGY badge
 
