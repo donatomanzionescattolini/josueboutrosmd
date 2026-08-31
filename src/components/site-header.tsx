@@ -8,7 +8,7 @@ import { dictionary, t } from "@/content/dictionary";
 import { person } from "@/content/profile";
 import { localeHref, type Locale } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
-import { CloseIcon, MenuIcon } from "./icons";
+import { ArrowUpRightIcon, CloseIcon, MenuIcon } from "./icons";
 import { LanguageToggle } from "./language-toggle";
 import { Monogram } from "./monogram";
 import { ThemeToggle } from "./theme-toggle";
@@ -21,11 +21,18 @@ const NAV = [
   { key: "media", path: "/media" },
 ] as const;
 
+/**
+ * Primary site chrome: a slim top bar (logo + language/theme toggles + a
+ * single menu trigger) paired with a full-height navigation drawer that
+ * slides in from the side. The drawer — not an inline link row — is the
+ * site's actual navigation surface at every breakpoint, so the destinations
+ * always get the same large, editorial treatment.
+ */
 export function SiteHeader({ locale }: { locale: Locale }) {
   const pathname = usePathname() ?? "";
   const [open, setOpen] = useState(false);
 
-  // Lock body scroll while the mobile menu is open.
+  // Lock body scroll while the drawer is open.
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -39,6 +46,8 @@ export function SiteHeader({ locale }: { locale: Locale }) {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
+
+  const items = [...NAV, { key: "contact", path: "/contact" } as const];
 
   return (
     <header data-print="hide" className="sticky top-0 z-50">
@@ -64,53 +73,30 @@ export function SiteHeader({ locale }: { locale: Locale }) {
             </span>
           </Link>
 
-          <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">
-            {NAV.map((item) => {
-              const href = localeHref(locale, item.path);
-              const active = pathname === href;
-              return (
-                <Link
-                  key={item.key}
-                  href={href}
-                  aria-current={active ? "page" : undefined}
-                  className={cn(
-                    "link-draw text-sm transition-colors",
-                    active ? "text-accent" : "text-muted hover:text-ink",
-                  )}
-                >
-                  {t(dictionary.nav[item.key], locale)}
-                </Link>
-              );
-            })}
-          </nav>
-
           <div className="flex items-center gap-2">
             <LanguageToggle
               locale={locale}
               label={t(dictionary.actions.toggleLanguage, locale)}
             />
             <ThemeToggle label={t(dictionary.actions.toggleTheme, locale)} />
-            <Link
-              href={localeHref(locale, "/contact")}
-              className="hidden rounded-pill bg-ink px-4 py-2 text-sm font-semibold text-paper transition-colors hover:bg-accent lg:block"
-            >
-              {t(dictionary.nav.contact, locale)}
-            </Link>
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
-              aria-controls="mobile-nav"
+              aria-controls="side-nav"
               aria-label={t(
                 open ? dictionary.nav.close : dictionary.nav.menu,
                 locale,
               )}
-              className="inline-flex size-9 items-center justify-center rounded-full border border-line text-muted transition-colors hover:text-ink lg:hidden"
+              className="inline-flex items-center gap-2 rounded-pill border border-line px-3.5 py-2 text-sm font-semibold text-ink transition-colors hover:border-clay hover:text-clay"
             >
+              <span className="hidden sm:inline">
+                {t(open ? dictionary.nav.close : dictionary.nav.menu, locale)}
+              </span>
               {open ? (
-                <CloseIcon width={18} height={18} />
+                <CloseIcon width={16} height={16} />
               ) : (
-                <MenuIcon width={18} height={18} />
+                <MenuIcon width={16} height={16} />
               )}
             </button>
           </div>
@@ -119,49 +105,60 @@ export function SiteHeader({ locale }: { locale: Locale }) {
 
       <AnimatePresence>
         {open && (
-          <motion.div
-            id="mobile-nav"
-            key="mobile-nav"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.34, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden lg:hidden"
-          >
-            <nav
-              aria-label="Mobile"
-              className="container-page mt-3 rounded-card border border-line bg-paper py-4 shadow-lift"
+          <>
+            <motion.div
+              key="side-nav-backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              onClick={() => setOpen(false)}
+              aria-hidden
+              className="fixed inset-0 z-40 bg-ink/40 backdrop-blur-sm"
+            />
+            <motion.nav
+              id="side-nav"
+              key="side-nav"
+              aria-label="Primary"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+              className="fixed inset-y-0 right-0 z-50 flex w-full max-w-sm flex-col overflow-y-auto border-l border-line bg-paper px-8 py-8 shadow-lift sm:py-10"
             >
-              <ul className="flex flex-col px-2">
-                {[...NAV, { key: "contact", path: "/contact" } as const].map(
-                  (item, i) => {
-                    const href = localeHref(locale, item.path);
-                    const active = pathname === href;
-                    return (
-                      <motion.li
-                        key={item.key}
-                        initial={{ opacity: 0, x: -12 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.05 + i * 0.05, duration: 0.35 }}
+              <ul className="mt-8 flex flex-1 flex-col">
+                {items.map((item, i) => {
+                  const href = localeHref(locale, item.path);
+                  const active = pathname === href;
+                  return (
+                    <motion.li
+                      key={item.key}
+                      initial={{ opacity: 0, x: 24 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.08 + i * 0.06, duration: 0.4 }}
+                    >
+                      <Link
+                        href={href}
+                        onClick={() => setOpen(false)}
+                        aria-current={active ? "page" : undefined}
+                        className={cn(
+                          "group flex items-center justify-between border-b border-line py-5 font-display text-2xl tracking-tight transition-colors sm:text-3xl",
+                          active ? "text-accent" : "text-ink hover:text-accent",
+                        )}
                       >
-                        <Link
-                          href={href}
-                          onClick={() => setOpen(false)}
-                          aria-current={active ? "page" : undefined}
-                          className={cn(
-                            "block border-b border-line px-3 py-4 font-display text-xl transition-colors last:border-b-0",
-                            active ? "text-accent" : "text-ink",
-                          )}
-                        >
-                          {t(dictionary.nav[item.key], locale)}
-                        </Link>
-                      </motion.li>
-                    );
-                  },
-                )}
+                        {t(dictionary.nav[item.key], locale)}
+                        <ArrowUpRightIcon
+                          width={18}
+                          height={18}
+                          className="opacity-0 transition-opacity group-hover:opacity-100"
+                        />
+                      </Link>
+                    </motion.li>
+                  );
+                })}
               </ul>
-            </nav>
-          </motion.div>
+            </motion.nav>
+          </>
         )}
       </AnimatePresence>
     </header>
