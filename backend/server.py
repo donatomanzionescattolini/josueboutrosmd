@@ -304,6 +304,83 @@ async def get_tts(key: str):
     return FileResponse(path, media_type="audio/mpeg", headers={"Cache-Control": "public, max-age=31536000"})
 
 
+ARCHIVE_KNOWLEDGE = """
+ABOUT JOSUÉ BOUTROS, MD:
+Bilingual family medicine resident physician and Chief Resident at Palmetto General Hospital, Hialeah, Florida. Trained in Camagüey, Cuba. Serves one of the most Spanish-speaking communities in the United States. Tagline: "Continuity. Language. Trust." 4 published peer-reviewed research articles; presentations at regional and national meetings. Practices in English and Spanish. Contact: hello@josueboutros.md — Hialeah/Miami, Florida.
+
+HIS PHILOSOPHY (three manifesto chapters):
+I. Continuity as Diagnosis — one blood pressure reading is a number; ten readings across a season with a physician who knows your life is a diagnosis. Continuity is a clinical instrument, not scheduling convenience.
+II. The Language Line — in Hialeah the history of illness is often told in Spanish; understanding must come before agreement; direct unmediated conversation catches what interpretation loses.
+III. Trust Across Generations — the household is the true unit of care; trust built across generations raises screening rates and lowers ER overuse.
+
+HIS ESSAYS (recommend as markdown links like [Title](/insights/slug)):
+1. "What Your Blood Pressure Numbers Actually Mean" (/insights/blood-pressure-numbers-meaning) — systolic vs diastolic explained; BP is a wave not a verdict; home monitoring done right; why diastolic matters; unglamorous levers: sodium, sleep, weight, daily meds.
+2. "Diabetes and the Food You Already Eat" (/insights/diabetes-cultural-food) — manage glucose without abandoning Cuban/Hispanic cooking; glycemic pairing (beans, protein, fiber with rice); meal order; cooled/reheated rice as resistant starch; plantains as celebration food.
+3. "When to Go to the ER, and When to Wait for Clinic" (/insights/er-vs-clinic-guide) — red flags demanding ER (chest pain radiating, stroke signs, severe breathlessness, fainting, uncontrolled bleeding, worst-ever headache); everything chronic/recurring belongs in primary care; ERs can't offer continuity.
+4. "The Patient Who Knows Your Name: Continuity as a Clinical Instrument" (/insights/continuity-as-instrument) — continuity is detection equipment; higher continuity means fewer hospitalizations and lower mortality; trust accumulates like interest across visits.
+5. "Understanding Before Agreement: Practicing on the Language Line" (/insights/the-language-line) — interpreted encounters lose register, metaphor, hesitation; words like "nervios" or "revuelto" are clinical data; language concordance measurably improves accuracy and adherence.
+
+HIS RESEARCH: language concordance & diagnostic accuracy in primary care; continuity of care in immigrant families across South Florida; barriers to preventive cancer screenings in Hialeah.
+ESPAÑOL: Médico de familia bilingüe, Jefe de Residentes en Palmetto General Hospital, Hialeah. Formado en Camagüey, Cuba. Lema: "Continuidad. Idioma. Confianza." Los mismos cinco ensayos existen en español en los mismos enlaces. Contacto: hello@josueboutros.md.
+"""
+
+ASK_SYSTEM = """You are the archive assistant on the personal website of Josué Boutros, MD. Answer in {lang}. Ground every answer in the KNOWLEDGE below — his essays, philosophy, biography, and research. Tone: warm, precise, editorial, like his writing. Keep answers under 180 words unless the question truly needs more. When an essay is relevant, recommend it as a markdown link like [Essay Title](/insights/slug). This is an educational assistant: never diagnose, never prescribe, and state briefly that this is not personal medical advice when the question is about someone's health. For emergency symptoms (crushing chest pain, stroke signs, severe trouble breathing, uncontrolled bleeding), say to call 911 or go to the ER now, then you may reference the ER essay. For appointments, speaking, media, or research collaboration, point to the contact page at /contact. Never invent credentials, publications, or facts not in the KNOWLEDGE.
+
+KNOWLEDGE:
+""" + ARCHIVE_KNOWLEDGE
+
+
+class AskRequest(BaseModel):
+    question: str = Field(min_length=1, max_length=1000)
+    lang: Optional[str] = "en"
+    session_id: str = Field(default="anon", max_length=64)
+
+
+@api_router.post("/ask")
+async def ask_archive(payload: AskRequest):
+    import json as _json
+    from fastapi.responses import StreamingResponse
+    from emergentintegrations.llm.chat import LlmChat, UserMessage, TextDelta, StreamDone
+
+    lang_name = "Spanish (español)" if payload.lang == "es" else "English"
+    chat = LlmChat(
+        api_key=os.environ["EMERGENT_LLM_KEY"],
+        session_id=f"ask-{payload.session_id}",
+        system_message=ASK_SYSTEM.format(lang=lang_name),
+    ).with_model("anthropic", "claude-sonnet-4-6")
+
+    async def gen():
+        full = ""
+        try:
+            async for ev in chat.stream_message(UserMessage(text=payload.question)):
+                if isinstance(ev, TextDelta):
+                    full += ev.content
+                    yield f"data: {_json.dumps({'t': ev.content})}\n\n"
+                elif isinstance(ev, StreamDone):
+                    break
+        except Exception as e:
+            logger.error(f"ask stream error: {e}")
+            yield f"data: {_json.dumps({'error': True})}\n\n"
+        try:
+            await db.ask_chats.insert_one({
+                "id": str(uuid.uuid4()),
+                "session_id": payload.session_id,
+                "lang": payload.lang,
+                "question": payload.question,
+                "answer": full,
+                "created_at": datetime.now(timezone.utc).isoformat(),
+            })
+        except Exception as e:
+            logger.error(f"ask history save failed: {e}")
+        yield "data: [DONE]\n\n"
+
+    return StreamingResponse(
+        gen(),
+        media_type="text/event-stream",
+        headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
+    )
+
+
 app.include_router(api_router)
 
 app.add_middleware(

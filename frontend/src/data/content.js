@@ -1,6 +1,6 @@
 export const IMAGES = {
-  hero: "https://images.unsplash.com/photo-1612531386530-97286d97c2d2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHw0fHxoaXNwYW5pYyUyMGRvY3RvciUyMHBvcnRyYWl0JTIwaG9zcGl0YWwlMjBwaHlzaWNpYW58ZW58MHx8fHwxNzg3OTg0MDU5fDA&ixlib=rb-4.1.0&q=85",
-  about: "https://images.unsplash.com/photo-1612531385446-f7e6d131e1d0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHwzfHxoaXNwYW5pYyUyMGRvY3RvciUyMHBvcnRyYWl0JTIwaG9zcGl0YWwlMjBwaHlzaWNpYW58ZW58MHx8fHwxNzg3OTg0MDU5fDA&ixlib=rb-4.1.0&q=85",
+  hero: "/images/josue-portrait.webp",
+  about: "/images/josue-portrait.webp",
   consult1: "https://images.unsplash.com/photo-1758691462413-b07dee2933fe?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwyfHxkb2N0b3IlMjBjb25zdWx0YXRpb24lMjBwYXRpZW50JTIwbGlzdGVuaW5nJTIwc3RldGhvc2NvcGV8ZW58MHx8fHwxNzg3OTg0MDY3fDA&ixlib=rb-4.1.0&q=85",
   consult2: "https://images.unsplash.com/photo-1631558556874-1d127211f574?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwxfHxkb2N0b3IlMjBjb25zdWx0YXRpb24lMjBwYXRpZW50JTIwbGlzdGVuaW5nJTIwc3RldGhvc2NvcGV8ZW58MHx8fHwxNzg3OTg0MDY3fDA&ixlib=rb-4.1.0&q=85",
   research: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwxfHx2aW50YWdlJTIwbWVkaWNhbCUyMG5vdGVib29rJTIwc3RldGhvc2NvcGUlMjByZXNlYXJjaCUyMGZvdW50YWluJTIwcGVufGVufDB8fHxibGFja1_hbmRfd2hpdGV8MTc4Nzk4NDA2N3ww&ixlib=rb-4.1.0&q=85",

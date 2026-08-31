@@ -49,9 +49,16 @@ Create a sophisticated personal professional website for Josué Boutros using jo
 - POST /api/tts: generated 65KB mp3, GET serves audio/mpeg 200; UI test: full essay audio generated (~30s) and played in custom player
 - UI: newsletter subscribe through footer shows success toast
 
+## Implemented (2026-08-31, round 3)
+- Real photography: Dr. Boutros' uploaded portrait (1500×2000 webp) now in the hero arched frame (object-top anchored), About page, a new physician card on Clinical, and as og:image/twitter:image for social sharing
+- "Ask the Archive" Claude assistant: floating chat widget (bottom-left, EN/ES) powered by Claude Sonnet 4.6 via Emergent universal key; POST /api/ask streams SSE tokens; grounded in a curated knowledge base (bio, manifesto, all 5 essays w/ slugs, research); recommends essays as rendered internal links; emergency red-flag escalation to 911; educational-use disclaimers; Q&A history stored in Mongo `ask_chats`; markdown (bold/italic/bullets/links) rendered cleanly in the panel
+
+## Verified (round 3)
+- /api/ask streams EN answer grounded in BP essay; ES answer with essay link + disclaimer; UI test: streamed 978-char ER answer with rendered internal link; suggestion chips, input, close all work
+- Hero portrait loads locally (/images/josue-portrait.webp), clinical physician card renders
+
 ## Backlog
 - P0: Real owner inbox for inquiry notifications (one env var once provided)
-- P1: Real photos of Dr. Boutros (awaiting user upload), swap into Hero/About/Clinical
-- P1: Admin inbox view for stored inquiries + subscriber list
-- P2: RSS feed + sitemap.xml; per-language URLs; essay auto-email to subscribers on publish
-- P2: Native-Spanish voice via ElevenLabs for ES essay audio
+- P1: More clinic photos if provided; admin inbox for inquiries/subscribers
+- P2: RSS + sitemap; per-language URLs; essay broadcast emails; ElevenLabs native-ES voice
+- P2: Persisted multi-turn chat history view; rate limiting on /api/ask

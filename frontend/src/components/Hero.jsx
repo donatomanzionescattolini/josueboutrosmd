@@ -91,7 +91,7 @@ export function Hero() {
                   src={IMAGES.hero}
                   alt="Josué Boutros, MD — family physician"
                   data-testid="hero-portrait"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/30 via-transparent to-transparent" />
               </div>

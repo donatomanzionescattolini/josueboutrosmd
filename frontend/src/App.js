@@ -5,6 +5,7 @@ import { Toaster } from "./components/ui/sonner";
 import { LangProvider } from "./context/LangContext";
 import { Nav } from "./components/Nav";
 import { Footer } from "./components/Footer";
+import { AskWidget } from "./components/AskWidget";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Clinical from "./pages/Clinical";
@@ -60,6 +61,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <AskWidget />
         <Toaster position="bottom-right" />
       </BrowserRouter>
     </LangProvider>

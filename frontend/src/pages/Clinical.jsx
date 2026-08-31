@@ -20,6 +20,19 @@ export default function Clinical() {
           <p className="mt-6 max-w-2xl text-base sm:text-lg text-mutedw">{t.clinical.sub}</p>
         </Reveal>
 
+        <Reveal delay={0.1} className="mt-12">
+          <div className="flex items-center gap-5 rounded-3xl border border-linew bg-surface p-5 sm:p-6 max-w-xl" data-testid="clinical-physician-card">
+            <div className="h-20 w-20 sm:h-24 sm:w-24 shrink-0 overflow-hidden rounded-t-full rounded-b-2xl border border-terra/25">
+              <img src={IMAGES.hero} alt="Josué Boutros, MD" data-testid="clinical-physician-photo" className="h-full w-full object-cover object-top" />
+            </div>
+            <div>
+              <p className="font-serif text-xl sm:text-2xl font-medium text-ink">Josué Boutros, MD</p>
+              <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-sage">{t.hero.badge}</p>
+              <p className="mt-1.5 font-serif italic text-sm text-mutedw">{t.hero.tagline}</p>
+            </div>
+          </div>
+        </Reveal>
+
         <div className="mt-16 grid md:grid-cols-2 gap-6">
           {t.clinical.pillars.map((p, i) => (
             <Reveal key={p.num} delay={i * 0.08}>

@@ -23,7 +23,7 @@ export default function About() {
             <div className="relative">
               <div className="absolute -inset-3 rounded-3xl border border-sage/30 -translate-x-3 translate-y-3 pointer-events-none" />
               <div className="relative overflow-hidden rounded-3xl aspect-[4/5]">
-                <img src={IMAGES.about} alt="Josué Boutros, MD" data-testid="about-portrait" className="h-full w-full object-cover" />
+                <img src={IMAGES.about} alt="Josué Boutros, MD" data-testid="about-portrait" className="h-full w-full object-cover object-top" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/25 to-transparent" />
               </div>
               <div className="mt-6 rounded-2xl border border-linew bg-surface p-6" data-testid="about-credentials-card">
