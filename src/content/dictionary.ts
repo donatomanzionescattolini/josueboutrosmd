@@ -194,6 +194,13 @@ export const dictionary = {
     languages: { en: "Languages", es: "Idiomas" },
   },
 
+  sideNav: {
+    atAGlance: { en: "At a glance", es: "De un vistazo" },
+    credentialed: { en: "Credentialed", es: "Certificaciones" },
+    bilingualCare: { en: "Bilingual care", es: "Atención bilingüe" },
+    viewFullCv: { en: "View full CV", es: "Ver currículum completo" },
+  },
+
   contact: {
     title: { en: "Contact", es: "Contacto" },
     lede: {
