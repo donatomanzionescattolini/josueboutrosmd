@@ -188,7 +188,7 @@ export const dictionary = {
     descriptions: {
       warm: { en: "Pine, paper, and the original clay warmth.", es: "Pino, papel y la calidez arcilla original." },
       monochromatic: { en: "One calm hue, varied by depth.", es: "Un tono sereno, con distintas profundidades." },
-      analogous: { en: "Pine with steel-blue and leaf-green neighbors.", es: "Pino con vecinos azul acero y verde hoja." },
+      analogous: { en: "Pine with steel-blue and slate-blue neighbors.", es: "Pino con vecinos azul acero y azul pizarra." },
       complementary: { en: "Pine with a focused berry counterpoint.", es: "Pino con un contrapunto baya preciso." },
       split: { en: "Pine, clay, and a rare plum note.", es: "Pino, arcilla y una nota ciruela poco común." },
       triadic: { en: "Pine, amber, and a quiet plum reserve.", es: "Pino, ámbar y una reserva ciruela serena." },

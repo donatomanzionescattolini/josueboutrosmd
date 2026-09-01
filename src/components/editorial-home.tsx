@@ -110,8 +110,9 @@ export function EditorialHome({ locale }: { locale: Locale }) {
                 {t(home.heroBadge, locale)}
               </div>
               <h1>
-                {t(home.heroLine1, locale)} <em>{t(home.heroLine2, locale)}</em>{" "}
-                {t(home.heroLine3, locale)}
+                <span>{t(home.heroLine1, locale)}</span>
+                <em>{t(home.heroLine2, locale)}</em>
+                <span>{t(home.heroLine3, locale)}</span>
               </h1>
               <p className="editorial-lede">{t(home.heroSub, locale)}</p>
               <div className="editorial-actions">

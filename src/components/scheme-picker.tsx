@@ -20,7 +20,7 @@ export type SchemeId = (typeof SCHEME_IDS)[number];
 const SWATCHES: Record<SchemeId, [string, string, string]> = {
   warm: ["#14201d", "#0f5f55", "#a85a34"],
   monochromatic: ["#16302c", "#146b61", "#4fa99d"],
-  analogous: ["#14201d", "#0f5f55", "#3f8aae"],
+  analogous: ["#14201d", "#185d6b", "#5b7893"],
   complementary: ["#14201d", "#0f5f55", "#b54b63"],
   split: ["#14201d", "#a85a34", "#844b6f"],
   triadic: ["#14201d", "#b7a13b", "#8a5ca2"],
