@@ -40,7 +40,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   if (!isLocale(raw)) notFound();
   const locale: Locale = raw;
   return (
-    <html lang={localeTags[locale]} className={`${display.variable} ${sans.variable}`} suppressHydrationWarning>
+    <html lang={localeTags[locale]} data-scheme="analogous" className={`${display.variable} ${sans.variable}`} suppressHydrationWarning>
       <head><ThemeScript /></head>
       <body>
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-accent focus:px-5 focus:py-2.5 focus:text-sm focus:text-accent-contrast">{t(dictionary.nav.skipToContent, locale)}</a>

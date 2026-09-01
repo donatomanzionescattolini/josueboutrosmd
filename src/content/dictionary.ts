@@ -122,6 +122,7 @@ export const dictionary = {
     championBadge: { en: "ABFM Resident Champion · 2026–2027", es: "Campeón de Residentes de ABFM · 2026–2027" },
     practiceEyebrow: { en: "How I practice", es: "Cómo ejerzo" },
     practiceTitle: { en: "Medicine as a relationship", es: "La medicina como relación" },
+    practiceArtLabel: { en: "Continuity / Language / Trust", es: "Continuidad / Idioma / Confianza" },
     practiceBody: {
       en: "Family medicine is built on continuity. I want to know my patients across years, not visits — the person in front of me and the people behind them.",
       es: "La medicina familiar se construye sobre la continuidad. Quiero conocer a mis pacientes a lo largo de los años, no solo de las consultas: a la persona frente a mí y a quienes están detrás.",
@@ -167,6 +168,31 @@ export const dictionary = {
     siteNote: {
       en: "This site is a personal professional profile.",
       es: "Este sitio es un perfil profesional personal.",
+    },
+  },
+
+  schemes: {
+    label: { en: "Color palette", es: "Paleta de color" },
+    choose: { en: "Choose a palette", es: "Elegir una paleta" },
+    active: { en: "Active palette", es: "Paleta activa" },
+    helper: { en: "From the catalogue", es: "Del catálogo" },
+    names: {
+      warm: { en: "Warm split", es: "Complementaria cálida" },
+      monochromatic: { en: "Monochromatic", es: "Monocromática" },
+      analogous: { en: "Analogous", es: "Análoga" },
+      complementary: { en: "Complementary", es: "Complementaria" },
+      split: { en: "Split-complementary", es: "Complementaria dividida" },
+      triadic: { en: "Triadic", es: "Triádica" },
+      tetradic: { en: "Tetradic", es: "Tetrádica" },
+    },
+    descriptions: {
+      warm: { en: "Pine, paper, and the original clay warmth.", es: "Pino, papel y la calidez arcilla original." },
+      monochromatic: { en: "One calm hue, varied by depth.", es: "Un tono sereno, con distintas profundidades." },
+      analogous: { en: "Pine with steel-blue and leaf-green neighbors.", es: "Pino con vecinos azul acero y verde hoja." },
+      complementary: { en: "Pine with a focused berry counterpoint.", es: "Pino con un contrapunto baya preciso." },
+      split: { en: "Pine, clay, and a rare plum note.", es: "Pino, arcilla y una nota ciruela poco común." },
+      triadic: { en: "Pine, amber, and a quiet plum reserve.", es: "Pino, ámbar y una reserva ciruela serena." },
+      tetradic: { en: "Four editorial hues for a bolder system.", es: "Cuatro tonos editoriales para un sistema más audaz." },
     },
   },
 

@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import { CloseIcon, MenuIcon } from "./icons";
 import { LanguageToggle } from "./language-toggle";
 import { Monogram } from "./monogram";
+import { SchemePicker } from "./scheme-picker";
 import { ThemeToggle } from "./theme-toggle";
 
 const NAV = [
@@ -106,6 +107,7 @@ export function SideNav({ locale }: { locale: Locale }) {
             label={t(dictionary.actions.toggleLanguage, locale)}
           />
           <ThemeToggle label={t(dictionary.actions.toggleTheme, locale)} />
+          <SchemePicker locale={locale} placement="top" />
         </div>
       </aside>
 
@@ -139,6 +141,7 @@ export function SideNav({ locale }: { locale: Locale }) {
                 label={t(dictionary.actions.toggleLanguage, locale)}
               />
               <ThemeToggle label={t(dictionary.actions.toggleTheme, locale)} />
+              <SchemePicker locale={locale} placement="bottom" />
               <button
                 type="button"
                 onClick={() => setOpen((v) => !v)}

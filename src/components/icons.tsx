@@ -57,6 +57,17 @@ export function ArrowRightIcon(props: IconProps) {
   );
 }
 
+export function PaletteIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M12 3.5a8.5 8.5 0 1 0 0 17h1.4a2.1 2.1 0 0 0 0-4.2h-1.1a1.9 1.9 0 0 1 0-3.8h2.9A5.8 5.8 0 0 0 12 3.5Z" />
+      <circle cx="7.5" cy="10" r=".8" fill="currentColor" stroke="none" />
+      <circle cx="10" cy="7" r=".8" fill="currentColor" stroke="none" />
+      <circle cx="14" cy="7" r=".8" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
 export function MailIcon(props: IconProps) {
   return (
     <svg {...base} {...props}>

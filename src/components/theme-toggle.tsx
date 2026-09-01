@@ -46,7 +46,12 @@ export function ThemeScript() {
 (function () {
   try {
     var stored = localStorage.getItem('theme');
+    var scheme = localStorage.getItem('color-scheme');
     var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var schemes = ['warm', 'monochromatic', 'analogous', 'complementary', 'split', 'triadic', 'tetradic'];
+    if (schemes.indexOf(scheme) !== -1) {
+      document.documentElement.dataset.scheme = scheme;
+    }
     if (stored === 'dark' || (!stored && prefersDark)) {
       document.documentElement.classList.add('dark');
     }

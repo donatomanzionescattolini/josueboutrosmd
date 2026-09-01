@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { dictionary, t } from "@/content/dictionary";
@@ -9,6 +8,7 @@ import {
   residency,
   roles,
   awards,
+  researchArticleCount,
 } from "@/content/profile";
 import { sortedArticles } from "@/content/articles";
 import { localeHref, type Locale } from "@/lib/i18n";
@@ -24,6 +24,8 @@ import {
 } from "./icons";
 import { BotanicalMark } from "./botanical-mark";
 import { LanguageToggle } from "./language-toggle";
+import { PortraitFrame } from "./portrait-frame";
+import { SchemePicker } from "./scheme-picker";
 import { ThemeToggle } from "./theme-toggle";
 import { Reveal } from "./reveal";
 
@@ -61,6 +63,7 @@ export function EditorialHome({ locale }: { locale: Locale }) {
         <div className="editorial-mobile-actions">
           <LanguageToggle locale={locale} label={t(dictionary.actions.toggleLanguage, locale)} />
           <ThemeToggle label={t(dictionary.actions.toggleTheme, locale)} />
+          <SchemePicker locale={locale} placement="bottom" />
         </div>
       </header>
 
@@ -90,6 +93,7 @@ export function EditorialHome({ locale }: { locale: Locale }) {
             <div className="editorial-language-row">
               <LanguageToggle locale={locale} label={t(dictionary.actions.toggleLanguage, locale)} />
               <ThemeToggle label={t(dictionary.actions.toggleTheme, locale)} />
+              <SchemePicker locale={locale} placement="top" />
             </div>
             <blockquote>
               <p>“{t(d.railQuote, locale)}”</p>
@@ -124,16 +128,13 @@ export function EditorialHome({ locale }: { locale: Locale }) {
               <div className="editorial-hero-art" aria-hidden>
                 <OrbitalArt />
               </div>
-              <div className="editorial-photo-frame">
-                <Image
-                  src="/portrait.webp"
-                  alt={`${person.displayName}, ${t(person.role, locale)}`}
-                  fill
-                  priority
-                  sizes="(max-width: 900px) 90vw, 38vw"
-                  className="editorial-photo"
-                />
-              </div>
+              <PortraitFrame
+                src="/portrait.webp"
+                alt={`${person.displayName}, ${t(person.role, locale)}`}
+                locale={locale}
+                className="editorial-portrait-window"
+                frameClassName="editorial-portrait-window-inner"
+              />
               <div className="editorial-photo-caption">
                 <span>{t(person.role, locale)}</span>
                 <strong>{residency.hospital}</strong>
@@ -145,7 +146,7 @@ export function EditorialHome({ locale }: { locale: Locale }) {
           <section id="practice" className="editorial-practice editorial-rule-section">
             <Reveal className="editorial-practice-art" aria-hidden>
               <PracticeArt />
-              <span>Continuity / Language / Trust</span>
+              <span>{t(d.practiceArtLabel, locale)}</span>
             </Reveal>
             <Reveal delay={0.08} className="editorial-section-copy">
               <p className="editorial-eyebrow">{t(d.practiceEyebrow, locale)}</p>
@@ -251,7 +252,7 @@ export function EditorialHome({ locale }: { locale: Locale }) {
             <p className="editorial-rail-heading">{t(d.atAGlance, locale)}</p>
             <RailFact icon={<UsersIcon width={19} height={19} />} title={t(person.role, locale)} detail={`${residency.hospital} · ${residency.location}`} />
             <RailFact icon={<PresentationIcon width={19} height={19} />} title={t(roles[2]?.title ?? "", locale)} detail={roles[2]?.organization ?? ""} />
-            <RailFact icon={<FileTextIcon width={19} height={19} />} title={`${String(4)} ${t(home.statArticles, locale)}`} detail={t(d.researchEyebrow, locale)} />
+            <RailFact icon={<FileTextIcon width={19} height={19} />} title={`${researchArticleCount} ${t(home.statArticles, locale)}`} detail={t(d.researchEyebrow, locale)} />
             <RailFact icon={<GlobeIcon width={19} height={19} />} title={t(d.drivesItems[3] ?? "", locale)} detail={person.languages.map((language) => t(language, locale)).join(" · ")} />
           </section>
 

@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { person, residency } from "@/content/profile";
 import type { Locale } from "@/lib/i18n";
-import { currentPgy } from "@/lib/utils";
+import { cn, currentPgy } from "@/lib/utils";
 import { Monogram } from "./monogram";
 import { t } from "@/content/dictionary";
 
@@ -27,6 +27,8 @@ export function PortraitFrame({
   locale,
   variant = "hero",
   tagline,
+  className,
+  frameClassName,
 }: {
   src: string | null;
   alt: string;
@@ -34,6 +36,8 @@ export function PortraitFrame({
   variant?: Variant;
   /** Small caption card overlapping the bottom-left corner (hero only). */
   tagline?: string;
+  className?: string;
+  frameClassName?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion();
@@ -41,7 +45,7 @@ export function PortraitFrame({
     target: ref,
     offset: ["start end", "end start"],
   });
-  const parallax = useTransform(scrollYProgress, [0, 1], ["-7%", "7%"]);
+  const parallax = useTransform(scrollYProgress, [0, 1], ["-4%", "4%"]);
   const imgY = reduceMotion ? "0%" : parallax;
 
   if (variant === "badge") {
@@ -59,17 +63,17 @@ export function PortraitFrame({
   }
 
   return (
-    <div ref={ref} className="relative">
+    <div ref={ref} className={cn("relative", className)}>
       {/* Offset arch echo — gives the plate depth without a drop shadow. */}
       <div
         aria-hidden
         className="absolute -inset-3 hidden rounded-t-[9rem] rounded-b-2xl border border-accent/25 translate-x-3 translate-y-3 pointer-events-none sm:block"
       />
 
-      <div className="relative aspect-4/5 overflow-hidden rounded-t-[9rem] rounded-b-2xl border border-line bg-surface-2">
+      <div className={cn("relative aspect-[3/4] overflow-hidden rounded-t-[9rem] rounded-b-2xl border border-line bg-surface-2", frameClassName)}>
         {src ? (
           <>
-            <motion.div style={{ y: imgY }} className="absolute inset-0 scale-[1.16]">
+            <motion.div style={{ y: imgY }} className="absolute inset-0 scale-[1.04]">
               <Image
                 src={src}
                 alt={alt}
