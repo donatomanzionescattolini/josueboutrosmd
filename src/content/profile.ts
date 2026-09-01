@@ -53,6 +53,13 @@ export type CredentialEntry = {
   note?: Localized;
 };
 
+export type RoleEntry = {
+  id: string;
+  title: Localized;
+  organization: string;
+  note?: Localized;
+};
+
 export type PublicationEntry = {
   id: string;
   /** Full citation, rendered as-is. Citations are not translated. */
@@ -348,6 +355,28 @@ export const researchProjects: ResearchProject[] = [
  */
 export const researchArticleCount = 4;
 
+/** Confirmed service and leadership roles from the current CV and ABFM letter. */
+export const roles: RoleEntry[] = [
+  {
+    id: "chief-resident",
+    title: { en: "Chief Resident", es: "Jefe de Residentes" },
+    organization: "Palmetto General Hospital · Family Medicine",
+    note: { en: "2025–2026", es: "2025–2026" },
+  },
+  {
+    id: "medical-board-representative",
+    title: { en: "Medical Board Representative · Resident Member", es: "Representante de la Junta Médica · Miembro Residente" },
+    organization: "Palmetto General Hospital",
+    note: { en: "Resident voice in program governance", es: "Voz de los residentes en la gobernanza del programa" },
+  },
+  {
+    id: "abfm-resident-champion",
+    title: { en: "ABFM Resident Champion", es: "Campeón de Residentes de ABFM" },
+    organization: "American Board of Family Medicine",
+    note: { en: "Inaugural cohort · 2026–2027", es: "Cohorte inaugural · 2026–2027" },
+  },
+];
+
 /* ═══════════════════════════════════════════════════════════════════════════
    MEDIA & APPEARANCES — the public side of the practice.
    ═══════════════════════════════════════════════════════════════════════════ */
@@ -476,10 +505,75 @@ export const credentials: CredentialEntry[] = [
  * sections only when it is non-empty, so an empty list costs nothing.
  */
 export const publications: PublicationEntry[] = [];
-export const presentations: PublicationEntry[] = [];
-export const awards: CredentialEntry[] = [];
+export const presentations: PublicationEntry[] = [
+  {
+    id: "genetics-program-camaguey",
+    citation: "Notes on the implementation and development of the medical genetics program in Camagüey — National Conference workshop, 2014.",
+  },
+  {
+    id: "condyloma-camaguey",
+    citation: "Condyloma, a sexually transmitted disease that is growing dangerously — Student Scientific Conference, 2011.",
+  },
+  {
+    id: "ischemic-heart-disease-camaguey",
+    citation: "Ischemic heart disease and its risk factors in the population of the Tula Aguilera Polyclinic — Family Medicine class project, 2014.",
+  },
+];
+export const awards: CredentialEntry[] = [
+  {
+    id: "abfm-resident-champion",
+    label: { en: "Inaugural ABFM Resident Champion", es: "Campeón inaugural de Residentes de ABFM" },
+    issuer: "American Board of Family Medicine",
+    note: { en: "2026–2027 academic year", es: "Año académico 2026–2027" },
+  },
+  {
+    id: "summa-cum-laude",
+    label: { en: "Summa Cum Laude · Gold Title", es: "Summa Cum Laude · Título de Oro" },
+    issuer: "Universidad de Ciencias Médicas de Camagüey",
+    note: { en: "2015–2016 · academic index 5.07", es: "2015–2016 · índice académico 5.07" },
+  },
+  {
+    id: "medical-genetics-honors",
+    label: { en: "First place · Medical Genetics Honors Exam", es: "Primer lugar · Examen de Honor de Genética Médica" },
+    issuer: "Universidad de Ciencias Médicas de Camagüey",
+  },
+];
 export const memberships: CredentialEntry[] = [];
-export const experience: TimelineEntry[] = [];
+export const experience: TimelineEntry[] = [
+  {
+    id: "sanitas-urgent-care",
+    period: "2019 — 2021",
+    title: { en: "Medical Assistant · Urgent Care", es: "Asistente Médico · Atención de Urgencias" },
+    organization: "Sanitas Medical Center",
+    location: "Miami, Florida",
+    detail: {
+      en: "Supported patients and clinical teams through the first COVID-19 waves, adapting quickly to a high-volume, high-uncertainty environment.",
+      es: "Apoyé a pacientes y equipos clínicos durante las primeras olas de COVID-19, adaptándome rápidamente a un entorno de alto volumen e incertidumbre.",
+    },
+  },
+  {
+    id: "father-olallo",
+    period: "2013 — 2016",
+    title: { en: "Volunteer · Elder Care", es: "Voluntario · Cuidado de Personas Mayores" },
+    organization: "Father Olallo Nursing Home",
+    location: "Camagüey, Cuba",
+    detail: {
+      en: "Worked alongside healthcare professionals and community volunteers with older adults facing chronic illness, disability, and limited family support.",
+      es: "Trabajé junto a profesionales de la salud y voluntarios comunitarios con adultos mayores que enfrentaban enfermedades crónicas, discapacidad y poco apoyo familiar.",
+    },
+  },
+  {
+    id: "medical-genetics",
+    period: "2012 — 2015",
+    title: { en: "Assistant Student · Medical Genetics", es: "Estudiante Auxiliar · Genética Médica" },
+    organization: "University of Camagüey, School of Medicine",
+    location: "Camagüey, Cuba",
+    detail: {
+      en: "Explored congenital metabolic errors, porphyria, genodermatoses, and mosaicism while helping develop the local genetics program.",
+      es: "Estudié errores metabólicos congénitos, porfiria, genodermatosis y mosaicismo mientras ayudaba a desarrollar el programa local de genética.",
+    },
+  },
+];
 
 /* ═══════════════════════════════════════════════════════════════════════════
    CONTACT

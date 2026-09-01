@@ -19,6 +19,7 @@ export function CvRail({ locale }: { locale: Locale }) {
   return (
     <aside
       data-print="hide"
+      data-global-chrome
       aria-label="Curriculum vitae summary"
       className="fixed inset-y-0 right-0 z-30 hidden w-72 flex-col overflow-y-auto border-l border-line bg-surface-2/60 px-7 py-10 xl:flex"
     >

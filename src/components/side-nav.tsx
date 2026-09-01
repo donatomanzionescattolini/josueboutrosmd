@@ -55,6 +55,7 @@ export function SideNav({ locale }: { locale: Locale }) {
       {/* Desktop: persistent left navigation rail. */}
       <aside
         data-print="hide"
+        data-global-chrome
         aria-label="Primary"
         className="fixed inset-y-0 left-0 z-40 hidden w-64 flex-col overflow-y-auto border-r border-line bg-paper/95 px-7 py-8 backdrop-blur-xl lg:flex"
       >
@@ -109,7 +110,7 @@ export function SideNav({ locale }: { locale: Locale }) {
       </aside>
 
       {/* Mobile / tablet: sticky top bar with a dropdown menu. */}
-      <header data-print="hide" className="sticky top-0 z-50 lg:hidden">
+      <header data-print="hide" data-global-chrome className="sticky top-0 z-50 lg:hidden">
         <div className="container-page pt-3 sm:pt-4">
           <div className="flex h-16 items-center justify-between gap-4 rounded-pill border border-line bg-paper/85 px-4 shadow-soft backdrop-blur-xl sm:px-5">
             <Link

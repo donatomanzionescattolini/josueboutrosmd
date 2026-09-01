@@ -97,6 +97,79 @@ export const dictionary = {
     ctaButton: { en: "Start a conversation", es: "Iniciar una conversación" },
   },
 
+  editorialHome: {
+    railQuote: {
+      en: "The best care is the care that makes room for the whole story.",
+      es: "La mejor atención es la que deja espacio para toda la historia.",
+    },
+    railQuoteAttribution: { en: "— J.B.", es: "— J.B." },
+    atAGlance: { en: "At a glance", es: "De un vistazo" },
+    drivesTitle: { en: "What drives my work", es: "Qué impulsa mi trabajo" },
+    drivesItems: [
+      { en: "Every patient has a story", es: "Cada paciente tiene una historia" },
+      { en: "Time is a clinical tool", es: "El tiempo es una herramienta clínica" },
+      { en: "Evidence meets reality", es: "La evidencia encuentra la realidad" },
+      { en: "Families, not just individuals", es: "Familias, no solo individuos" },
+    ] satisfies Localized[],
+    drivesDetails: [
+      { en: "I listen for the whole one.", es: "Escucho la historia completa." },
+      { en: "I spend it where it changes outcomes.", es: "Lo invierto donde cambia resultados." },
+      { en: "Good medicine fits a real life.", es: "La buena medicina cabe en una vida real." },
+      { en: "I treat the household.", es: "Atiendo al hogar." },
+    ] satisfies Localized[],
+    rolesTitle: { en: "Current roles", es: "Roles actuales" },
+    achievementsTitle: { en: "Selected achievements", es: "Logros destacados" },
+    championBadge: { en: "ABFM Resident Champion · 2026–2027", es: "Campeón de Residentes de ABFM · 2026–2027" },
+    practiceEyebrow: { en: "How I practice", es: "Cómo ejerzo" },
+    practiceTitle: { en: "Medicine as a relationship", es: "La medicina como relación" },
+    practiceBody: {
+      en: "Family medicine is built on continuity. I want to know my patients across years, not visits — the person in front of me and the people behind them.",
+      es: "La medicina familiar se construye sobre la continuidad. Quiero conocer a mis pacientes a lo largo de los años, no solo de las consultas: a la persona frente a mí y a quienes están detrás.",
+    },
+    practiceLink: { en: "Read more about my philosophy", es: "Leer más sobre mi filosofía" },
+    clinicalEyebrow: { en: "Clinical work", es: "Trabajo clínico" },
+    clinicalTitle: { en: "What I focus on", es: "En qué me enfoco" },
+    clinicalLink: { en: "See my approach to patient care", es: "Ver mi enfoque de atención" },
+    researchEyebrow: { en: "Research", es: "Investigación" },
+    researchTitle: { en: "Questions I’m pursuing", es: "Preguntas que persigo" },
+    researchBody: {
+      en: "I study the intersection of language, culture, and access in primary care. My goal is to generate evidence that improves care for communities like mine.",
+      es: "Estudio la intersección del idioma, la cultura y el acceso en la atención primaria. Mi objetivo es generar evidencia que mejore la atención de comunidades como la mía.",
+    },
+    researchLink: { en: "View all research projects", es: "Ver todos los proyectos" },
+    writingEyebrow: { en: "Writing", es: "Escritura" },
+    writingTitle: { en: "Thoughts in progress", es: "Ideas en proceso" },
+    writingBody: {
+      en: "Plain-language writing for patients, families, and anyone who wants to understand medicine better.",
+      es: "Escritura en lenguaje claro para pacientes, familias y cualquiera que quiera entender mejor la medicina.",
+    },
+    writingLink: { en: "View all notes", es: "Ver todas las notas" },
+    storyEyebrow: { en: "My story", es: "Mi historia" },
+    storyTitle: { en: "Why this path", es: "Por qué este camino" },
+    storyBody: {
+      en: "I trained in Camagüey, Cuba, where medicine begins with the neighborhood and the household. Work in genetics, dermatology, elder care, and urgent care taught me to stay curious under pressure. After emigrating, I worked, studied, and rebuilt a path into U.S. medicine. Every step made the same lesson clearer: care is strongest when it is skilled, curious, and kind.",
+      es: "Me formé en Camagüey, Cuba, donde la medicina comienza con el barrio y el hogar. El trabajo en genética, dermatología, cuidado de personas mayores y urgencias me enseñó a mantener la curiosidad bajo presión. Después de emigrar, trabajé, estudié y reconstruí un camino hacia la medicina en Estados Unidos. Cada paso hizo más clara la misma lección: la atención es más fuerte cuando es competente, curiosa y bondadosa.",
+    },
+    storyLink: { en: "Read my story", es: "Leer mi historia" },
+    storyQuote: {
+      en: "If you have talent for something, you should not bury it but multiply it.",
+      es: "Si tienes talento para algo, no debes enterrarlo, sino multiplicarlo.",
+    },
+    bottomCta: {
+      en: "Open to opportunities that combine clinical excellence, research, and meaningful care.",
+      es: "Abierto a oportunidades que combinen excelencia clínica, investigación y atención significativa.",
+    },
+    bottomCtaSub: {
+      en: "If you are building a team that shares these values, I would love to connect.",
+      es: "Si está construyendo un equipo que comparte estos valores, me encantaría conectar.",
+    },
+    bottomCtaLink: { en: "Let’s start a conversation", es: "Empecemos una conversación" },
+    siteNote: {
+      en: "This site is a personal professional profile.",
+      es: "Este sitio es un perfil profesional personal.",
+    },
+  },
+
   manifesto: {
     eyebrow: { en: "The Manifesto", es: "El Manifiesto" },
     title: { en: "Three commitments, practiced daily.", es: "Tres compromisos, practicados a diario." },

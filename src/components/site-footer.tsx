@@ -21,6 +21,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
   return (
     <footer
       data-print="hide"
+      data-global-footer
       className="border-t border-line bg-surface-2/60"
     >
       <div className="container-page py-16">
