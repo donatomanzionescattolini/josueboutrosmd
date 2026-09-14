@@ -5,6 +5,7 @@ import { contact, contactNote, person, residency } from "@/content/profile";
 import { isLocale, type Locale } from "@/lib/i18n";
 import { ContactForm } from "@/components/contact-form";
 import {
+  InstagramIcon,
   LinkedInIcon,
   MailIcon,
   MapPinIcon,
@@ -57,6 +58,9 @@ export default async function ContactPage({
   const profiles = [
     contact.linkedin
       ? { icon: LinkedInIcon, label: "LinkedIn", href: contact.linkedin }
+      : null,
+    contact.instagram
+      ? { icon: InstagramIcon, label: "Instagram", href: contact.instagram }
       : null,
     contact.doximity
       ? { icon: StethoscopeIcon, label: "Doximity", href: contact.doximity }

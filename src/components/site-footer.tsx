@@ -2,7 +2,12 @@ import Link from "next/link";
 import { dictionary, t } from "@/content/dictionary";
 import { contact, person, residency } from "@/content/profile";
 import { localeHref, type Locale } from "@/lib/i18n";
-import { LinkedInIcon, MailIcon, StethoscopeIcon } from "./icons";
+import {
+  InstagramIcon,
+  LinkedInIcon,
+  MailIcon,
+  StethoscopeIcon,
+} from "./icons";
 import { Monogram } from "./monogram";
 
 const NAV = [
@@ -85,6 +90,19 @@ export function SiteFooter({ locale }: { locale: Locale }) {
                   >
                     <LinkedInIcon width={16} height={16} />
                     LinkedIn
+                  </a>
+                </li>
+              )}
+              {contact.instagram && (
+                <li>
+                  <a
+                    href={contact.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer me"
+                    className="link-draw inline-flex items-center gap-2 text-muted hover:text-ink"
+                  >
+                    <InstagramIcon width={16} height={16} />
+                    Instagram
                   </a>
                 </li>
               )}
