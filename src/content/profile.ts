@@ -337,6 +337,7 @@ export type Contact = {
   /** Optional — an empty string hides it everywhere. */
   phone: string;
   linkedin: string;
+  instagram: string;
   doximity: string;
   siteUrl: string;
 };
@@ -348,6 +349,7 @@ export const contact: Contact = {
   phone: "",
   /** Optional professional profiles. Leave a value empty to hide the link. */
   linkedin: "https://www.linkedin.com/in/josue-boutros-617b7a309/",
+  instagram: "https://www.instagram.com/jboutros.md/",
   doximity: "https://www.doximity.com/pub/josue-boutros-md",
   /** Set once the domain is live — used for canonical URLs and social cards. */
   siteUrl: "https://josueboutrosmd.com",
