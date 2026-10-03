@@ -607,3 +607,29 @@ export const contactNote: Localized = {
   en: "This site is a professional profile, not a patient portal. Please do not send personal health information, and do not use this form for anything urgent. If you are experiencing a medical emergency, call 911.",
   es: "Este sitio es un perfil profesional, no un portal de pacientes. Por favor no envíe información médica personal ni utilice este formulario para asuntos urgentes. Si tiene una emergencia médica, llame al 911.",
 };
+
+export type Testimonial = {
+  id: string;
+  quote: Localized;
+  author: Localized;
+};
+
+/** Patient testimonials — exactly two are displayed on the site. */
+export const testimonials: Testimonial[] = [
+  {
+    id: "virginia-vallejo",
+    quote: {
+      en: "I have been Dr. Josué Boutros's patient for several months, in his role as Chief Resident at Nova Southeastern University. He has been my primary care doctor in the U.S. since 2012, when I suffered five strokes and was diagnosed with atrial fibrillation. Recently I had open-heart surgery and was diagnosed with type 2 diabetes. Dr. Boutros has monitored both conditions in the most serious, professional, generous and kind way. I recommend Dr. Boutros as the best primary care doctor one could know, and I hope he can continue to be mine for the years of life I have left, as I have turned 77.",
+      es: "He sido paciente del Dr. Josué Boutros desde hace varios meses, en su condición de Jefe de Residentes de Nova SE University. Ha sido mi médico de cabecera (primary doctor en EE. UU.) desde 2012, cuando sufrí cinco derrames cerebrales y me diagnosticaron fibrilación auricular. Recientemente me operaron del corazón y me diagnosticaron diabetes tipo 2. El Dr. Boutros ha monitoreado ambas condiciones de la manera más seria, profesional, generosa y amable. Recomiendo al Dr. Boutros como el mejor médico de cabecera que uno pueda conocer, y espero que pueda continuar siéndolo en los años de vida que me quedan, ya que cumplí 77 años.",
+    },
+    author: { en: "Virginia Vallejo, Patient", es: "Virginia Vallejo, Paciente" },
+  },
+  {
+    id: "anonymous-patient",
+    quote: {
+      en: "Excellent doctor and, above all, a wonderful person. He has treated me with kindness, patience, and professionalism since day one. He always takes the time to listen, explain everything clearly, and help me with every situation. He genuinely cares about my health and well-being. I’m very grateful for all his support and highly recommend him.",
+      es: "Un excelente médico y, sobre todo, una persona maravillosa. Me ha tratado con amabilidad, paciencia y profesionalismo desde el primer día. Siempre se toma el tiempo de escuchar, explicar todo con claridad y ayudarme en cada situación. Realmente se preocupa por mi salud y bienestar. Estoy muy agradecido por todo su apoyo y lo recomiendo ampliamente.",
+    },
+    author: { en: "Patient", es: "Paciente" },
+  },
+];

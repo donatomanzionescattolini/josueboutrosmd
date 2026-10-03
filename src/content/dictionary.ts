@@ -240,6 +240,11 @@ export const dictionary = {
     disclaimer: { en: "Educational content — not a substitute for personal medical advice.", es: "Contenido educativo — no sustituye el consejo médico personal." },
   },
 
+  testimonials: {
+    eyebrow: { en: "Testimonials", es: "Testimonios" },
+    heading: { en: "In my patients’ words", es: "En palabras de mis pacientes" },
+  },
+
   research: {
     title: { en: "Research", es: "Investigación" },
     lede: {
