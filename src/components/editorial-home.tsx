@@ -122,7 +122,7 @@ export function EditorialHome({ locale }: { locale: Locale }) {
               </div>
             </Reveal>
 
-            <Reveal delay={0.16} className="editorial-hero-visual">
+            <Reveal delay={0.16} hinge="right" className="editorial-hero-visual">
               <div className="editorial-hero-art" aria-hidden>
                 <OrbitalArt />
               </div>
@@ -146,7 +146,7 @@ export function EditorialHome({ locale }: { locale: Locale }) {
               <PracticeArt />
               <span>{t(d.practiceArtLabel, locale)}</span>
             </Reveal>
-            <Reveal delay={0.08} className="editorial-section-copy">
+            <Reveal delay={0.08} hinge="right" className="editorial-section-copy">
               <p className="editorial-eyebrow">{t(d.practiceEyebrow, locale)}</p>
               <h2>{t(d.practiceTitle, locale)}</h2>
               <p>{t(d.practiceBody, locale)}</p>
@@ -163,7 +163,7 @@ export function EditorialHome({ locale }: { locale: Locale }) {
             </Reveal>
             <div className="editorial-focus-grid">
               {focus.map((item, i) => (
-                <Reveal key={item.id} as="article" delay={i * 0.05} className="editorial-focus-card">
+                <Reveal key={item.id} as="article" delay={i * 0.05} hinge={i % 2 ? "right" : "left"} className="editorial-focus-card">
                   <span className="editorial-focus-icon" aria-hidden>
                     {i === 0 ? <StethoscopeIcon width={22} height={22} /> : i === 1 ? <CheckIcon width={22} height={22} /> : i === 2 ? <GlobeIcon width={22} height={22} /> : <UsersIcon width={22} height={22} />}
                   </span>
@@ -188,7 +188,7 @@ export function EditorialHome({ locale }: { locale: Locale }) {
             </div>
             <div className="editorial-research-grid">
               {projects.map((project, i) => (
-                <Reveal key={project.id} delay={i * 0.06} className="editorial-research-card">
+                <Reveal key={project.id} delay={i * 0.06} hinge={i % 2 ? "right" : "left"} className="editorial-research-card">
                   <span className="editorial-card-index">0{i + 1}</span>
                   <h3>{t(project.title, locale)}</h3>
                   <p>{t(project.body, locale)}</p>
@@ -212,7 +212,7 @@ export function EditorialHome({ locale }: { locale: Locale }) {
             </Reveal>
             <div className="editorial-article-grid">
               {articles.map((article, i) => (
-                <Reveal key={article.slug} delay={i * 0.06} className="editorial-article-card">
+                <Reveal key={article.slug} delay={i * 0.06} hinge={i % 2 ? "right" : "left"} className="editorial-article-card">
                   <span className="editorial-article-meta">{article.date.replace("-", " · ")} · {article.readMinutes} min</span>
                   <h3>{t(article.title, locale)}</h3>
                   <p>{t(article.dek, locale)}</p>
@@ -231,7 +231,7 @@ export function EditorialHome({ locale }: { locale: Locale }) {
               <p>{t(d.storyBody, locale)}</p>
               <Link href={localeHref(locale, "/about")} className="editorial-text-link">{t(d.storyLink, locale)} <ArrowRightIcon width={14} height={14} /></Link>
             </Reveal>
-            <Reveal delay={0.1} className="editorial-story-card">
+            <Reveal delay={0.1} hinge="right" className="editorial-story-card">
               <span className="editorial-story-mark">JB</span>
               <p>“{t(d.storyQuote, locale)}”</p>
               <span>{t(d.railQuoteAttribution, locale)}</span>
