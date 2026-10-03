@@ -171,31 +171,6 @@ export const dictionary = {
     },
   },
 
-  schemes: {
-    label: { en: "Color palette", es: "Paleta de color" },
-    choose: { en: "Choose a palette", es: "Elegir una paleta" },
-    active: { en: "Active palette", es: "Paleta activa" },
-    helper: { en: "From the catalogue", es: "Del catálogo" },
-    names: {
-      warm: { en: "Warm split", es: "Complementaria cálida" },
-      monochromatic: { en: "Monochromatic", es: "Monocromática" },
-      analogous: { en: "Analogous", es: "Análoga" },
-      complementary: { en: "Complementary", es: "Complementaria" },
-      split: { en: "Split-complementary", es: "Complementaria dividida" },
-      triadic: { en: "Triadic", es: "Triádica" },
-      tetradic: { en: "Tetradic", es: "Tetrádica" },
-    },
-    descriptions: {
-      warm: { en: "Pine, paper, and the original clay warmth.", es: "Pino, papel y la calidez arcilla original." },
-      monochromatic: { en: "One calm hue, varied by depth.", es: "Un tono sereno, con distintas profundidades." },
-      analogous: { en: "Pine with steel-blue and slate-blue neighbors.", es: "Pino con vecinos azul acero y azul pizarra." },
-      complementary: { en: "Pine with a focused berry counterpoint.", es: "Pino con un contrapunto baya preciso." },
-      split: { en: "Pine, clay, and a rare plum note.", es: "Pino, arcilla y una nota ciruela poco común." },
-      triadic: { en: "Pine, amber, and a quiet plum reserve.", es: "Pino, ámbar y una reserva ciruela serena." },
-      tetradic: { en: "Four editorial hues for a bolder system.", es: "Cuatro tonos editoriales para un sistema más audaz." },
-    },
-  },
-
   manifesto: {
     eyebrow: { en: "The Manifesto", es: "El Manifiesto" },
     title: { en: "Three commitments, practiced daily.", es: "Tres compromisos, practicados a diario." },

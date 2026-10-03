@@ -25,7 +25,6 @@ import {
 import { BotanicalMark } from "./botanical-mark";
 import { LanguageToggle } from "./language-toggle";
 import { PortraitFrame } from "./portrait-frame";
-import { SchemePicker } from "./scheme-picker";
 import { ThemeToggle } from "./theme-toggle";
 import { Reveal } from "./reveal";
 
@@ -63,7 +62,6 @@ export function EditorialHome({ locale }: { locale: Locale }) {
         <div className="editorial-mobile-actions">
           <LanguageToggle locale={locale} label={t(dictionary.actions.toggleLanguage, locale)} />
           <ThemeToggle label={t(dictionary.actions.toggleTheme, locale)} />
-          <SchemePicker locale={locale} placement="bottom" />
         </div>
       </header>
 
@@ -93,7 +91,6 @@ export function EditorialHome({ locale }: { locale: Locale }) {
             <div className="editorial-language-row">
               <LanguageToggle locale={locale} label={t(dictionary.actions.toggleLanguage, locale)} />
               <ThemeToggle label={t(dictionary.actions.toggleTheme, locale)} />
-              <SchemePicker locale={locale} placement="top" />
             </div>
             <blockquote>
               <p>“{t(d.railQuote, locale)}”</p>

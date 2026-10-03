@@ -402,18 +402,18 @@
    ═══════════════════════════════════════════════════════════════════════════ */
 
 :root {
-  --steel: #3f8aae;
-  --steel-soft: #e4f1f6;
-  --leaf: #369352;
-  --leaf-soft: #e5f2e8;
+  --steel: #a85a34;
+  --steel-soft: #f6e9e1;
+  --leaf: #7d8c54;
+  --leaf-soft: #edf1e3;
   --editorial-rule: rgba(20, 32, 29, 0.14);
 }
 
 .dark {
-  --steel: #70b6d6;
-  --steel-soft: #18303b;
-  --leaf: #70bb82;
-  --leaf-soft: #1d3424;
+  --steel: #e4956a;
+  --steel-soft: #34241e;
+  --leaf: #b3c27b;
+  --leaf-soft: #293020;
   --editorial-rule: rgba(236, 234, 228, 0.16);
 }
 
@@ -462,8 +462,6 @@ body:has(.editorial-home) [data-global-footer] {
   flex-direction: column;
   padding: 38px 27px 30px;
   border-right: 1px solid var(--editorial-rule);
-  /* Let the palette menu float into the center column instead of clipping at the rail edge. */
-  overflow: visible;
 }
 
 .editorial-right-rail {
