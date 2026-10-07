@@ -10,7 +10,6 @@ import {
   residency,
   shortBio,
   tagline,
-  testimonials,
   training,
 } from "@/content/profile";
 import { isLocale, type Locale } from "@/lib/i18n";
@@ -21,7 +20,6 @@ import { Portrait } from "@/components/portrait";
 import { Principles } from "@/components/principles";
 import { Reveal } from "@/components/reveal";
 import { Section } from "@/components/section";
-import { Testimonials } from "@/components/testimonials";
 import { Timeline } from "@/components/timeline";
 
 export async function generateMetadata({
@@ -157,14 +155,6 @@ export default async function AboutPage({
         divider
       >
         <Principles items={principles} locale={locale} />
-      </Section>
-
-      <Section
-        eyebrow={t(dictionary.testimonials.eyebrow, locale)}
-        heading={t(dictionary.testimonials.heading, locale)}
-        divider
-      >
-        <Testimonials items={testimonials} locale={locale} />
       </Section>
 
       <Section
