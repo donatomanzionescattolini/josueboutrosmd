@@ -600,6 +600,25 @@ body:has(.editorial-home) [data-global-footer] {
   padding: 44px clamp(28px, 4.2vw, 58px) 48px;
 }
 
+.editorial-testimonials {
+  padding: 34px clamp(28px, 4.2vw, 58px) 38px;
+  background: var(--surface-2);
+}
+
+.editorial-testimonials-heading {
+  margin-bottom: 20px;
+}
+
+.editorial-testimonials h2 {
+  margin-top: 10px;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2.05vw, 2.05rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
 .editorial-hero-copy {
   align-self: center;
   min-width: 0;

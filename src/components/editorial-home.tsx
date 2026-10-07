@@ -9,6 +9,7 @@ import {
   roles,
   awards,
   researchArticleCount,
+  testimonials,
 } from "@/content/profile";
 import { sortedArticles } from "@/content/articles";
 import { localeHref, type Locale } from "@/lib/i18n";
@@ -27,6 +28,7 @@ import { LanguageToggle } from "./language-toggle";
 import { PortraitFrame } from "./portrait-frame";
 import { ThemeToggle } from "./theme-toggle";
 import { Reveal } from "./reveal";
+import { Testimonials } from "./testimonials";
 
 const editorialNav = [
   { key: "home", path: "#home" },
@@ -139,6 +141,14 @@ export function EditorialHome({ locale }: { locale: Locale }) {
                 <small>{pgy !== null ? `PGY-${pgy}` : t(home.eyebrow, locale)} · {t(person.location, locale)}</small>
               </div>
             </Reveal>
+          </section>
+
+          <section id="testimonials" className="editorial-testimonials editorial-rule-section">
+            <Reveal className="editorial-testimonials-heading">
+              <p className="editorial-eyebrow">{t(dictionary.testimonials.eyebrow, locale)}</p>
+              <h2>{t(dictionary.testimonials.heading, locale)}</h2>
+            </Reveal>
+            <Testimonials items={testimonials} locale={locale} />
           </section>
 
           <section id="practice" className="editorial-practice editorial-rule-section">
