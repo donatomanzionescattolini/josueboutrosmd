@@ -591,7 +591,7 @@ export type Contact = {
 
 export const contact: Contact = {
   /** TODO: replace with the real address before launch. */
-  email: "contact@josueboutrosmd.com",
+  email: "josuepablo0502@gmail.com",
   /** Optional. Leave empty to hide. */
   phone: "",
   /** Optional professional profiles. Leave a value empty to hide the link. */

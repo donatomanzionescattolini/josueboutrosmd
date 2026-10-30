@@ -25,7 +25,7 @@ Specifically:
 | Residency program, hospital, 2024–2027 dates | Seeded — confirm |
 | Medical school and graduation year | Seeded — confirm |
 | Certifications (ECFMG, BLS, ACLS) | **Placeholder list — confirm or delete** |
-| Contact email | **`contact@josueboutrosmd.com` — replace with the real address** |
+| Contact email | `josuepablo0502@gmail.com` |
 | Bio, clinical focus, practice principles | Written as a first draft — edit freely |
 | Publications, awards, memberships, presentations | Empty on purpose — add real entries |
 | Portrait photograph | Not yet added — see [`public/README.md`](public/README.md) |
